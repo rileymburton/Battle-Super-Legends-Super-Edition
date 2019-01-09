@@ -16,6 +16,10 @@ public class MapGenerator : MonoBehaviour {
 
 	public GameObject roomE;
 	public GameObject roomF;
+	public GameObject roomG;
+	public GameObject roomH;
+	public GameObject roomI;
+	public GameObject roomJ;
 
 	public GameObject roomLeftExitY;
 	public GameObject roomRightExitZ;
@@ -42,6 +46,7 @@ public class MapGenerator : MonoBehaviour {
 		PlaceRooms();
 		PlaceRandomRooms();
 	//	UpdateRoomCode();
+		InstantiateRooms();
 	}
 	
 	private void GenerateMap(){
@@ -118,7 +123,7 @@ public class MapGenerator : MonoBehaviour {
 				
 
 				if(roomExitType[i] == "A"){
-				Instantiate(roomA, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+				//Instantiate(roomA, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 				xPosition.Add(xDisplacement);
 				yPosition.Add(yDisplacement);
 					if(spawnDirections[i] == 0){
@@ -128,66 +133,66 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "B"){
-					Instantiate(roomB, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomB, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);
 					xDisplacement += 10;
 				}
 				else if(roomExitType[i] == "C"){
-					Instantiate(roomC, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomC, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);					
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "D"){
-					Instantiate(roomD, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomD, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "E"){
-					Instantiate(roomE, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomE, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement -= 10;
 				}
 				else if (roomExitType[i] == "F"){
-					Instantiate(roomF, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomF, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement+= 10;
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
-					Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 1){
-					Instantiate(roomLeftExitY, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomLeftExitY, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 2){
-					Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
 
 				
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 1){
-					Instantiate(roomRightExitZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomRightExitZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 0){
-					Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement += 10;
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 2){
-					Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
+					//Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement -= 10;
@@ -234,47 +239,174 @@ public class MapGenerator : MonoBehaviour {
 			// 2 is down
 			// 3 is left
 			int randomDirection = Random.Range(0,4);
-			while(true){
-				if(randomDirection == 0 && canGoUp == false){
-					randomDirection = Random.Range(0,4);
+				while(true){
+					if(randomDirection == 0 && canGoUp == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 1 && canGoRight == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 2 && canGoDown == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 3 && canGoLeft == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else{					
+						break;
+					}
 				}
-				else if(randomDirection == 1 && canGoRight == false){
-					randomDirection = Random.Range(0,4);
-				}
-				else if(randomDirection == 2 && canGoDown == false){
-					randomDirection = Random.Range(0,4);
-				}
-				else if(randomDirection == 3 && canGoLeft == false){
-					randomDirection = Random.Range(0,4);
-				}
-				else{					
-					break;
-				}
+				
 				if(randomDirection == 0 && canGoUp) {
-					Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
+					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
+					currentYPosition += 10;
 					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition + 10);
-					roomExitType.Add("A");				
+					yPosition.Add(currentYPosition);
+					roomExitType.Add("A");		
+					if(roomExitType[randomRoomElementNumber] == "C"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "H");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "D"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "J");
+						
+					}
+					if(roomExitType[randomRoomElementNumber] == "E"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "G");
+						
+					}		
 				}
 				else if(randomDirection == 2 && canGoDown) {
-					Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);
+					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);
+					currentYPosition -= 10;
 					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition - 10);	
-					roomExitType.Add("A");				
+					yPosition.Add(currentYPosition);	
+					roomExitType.Add("A");
+					if(roomExitType[randomRoomElementNumber] == "C"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "I");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "B"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "J");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "F"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "G");
+						
+					}				
 				}
 				else if(randomDirection == 1 && canGoRight) {
-					Instantiate(roomC, new Vector2(currentXPosition + 10, currentYPosition), Quaternion.identity);
-					xPosition.Add(currentXPosition + 10);
+					//Instantiate(roomC, new Vector2(currentXPosition + 10, currentYPosition), Quaternion.identity);
+					currentXPosition += 10;
+					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
+					if(roomExitType[randomRoomElementNumber] == "A"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "J");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "E"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "I");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "F"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "H");
+						
+					}
 				}
 				else if(randomDirection == 3 && canGoLeft) {
-					Instantiate(roomC, new Vector2(currentXPosition - 10, currentYPosition), Quaternion.identity);
-					xPosition.Add(currentXPosition - 10);
+					//Instantiate(roomC, new Vector2(currentXPosition - 10, currentYPosition), Quaternion.identity);
+					currentXPosition -= 10;
+					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
-				}
+					if(roomExitType[randomRoomElementNumber] == "A"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "G");
+						
+					}
+					else if(roomExitType[randomRoomElementNumber] == "B"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "H");
+						break;
+					}
+					else if(roomExitType[randomRoomElementNumber] == "D"){
+						roomExitType.RemoveAt(randomRoomElementNumber);
+						roomExitType.Insert(randomRoomElementNumber, "I");
+						
+					}
+				    
 			}
 		}
 	}
+		private void InstantiateRooms(){
+			for(int  i = 0; i< roomExitType.Count; i++){
+				Debug.Log(roomExitType[i]);
+				if(roomExitType[i] == "A"){
+					Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "B"){
+					Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "C"){
+					Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "D"){
+					Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "E"){
+					Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "F"){
+					Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "G"){
+					Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "H"){
+					Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "I"){
+					Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "J"){
+					Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
+					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					
+				}
+				else if (roomExitType[i] == "Y" && spawnDirections[i] == 1){
+					Instantiate(roomLeftExitY, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						
+				}
+				else if (roomExitType[i] == "Y" && spawnDirections[i] == 2){
+					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				
+				}
+
+				
+				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 1){
+					Instantiate(roomRightExitZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					
+				}
+				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 0){
+					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					
+				}
+				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 2){
+					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				
+				}
+			}
+		}
 }
