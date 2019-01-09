@@ -256,7 +256,6 @@ public class MapGenerator : MonoBehaviour {
 						break;
 					}
 				}
-				
 				if(randomDirection == 0 && canGoUp) {
 					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
 					currentYPosition += 10;
@@ -268,7 +267,7 @@ public class MapGenerator : MonoBehaviour {
 						roomExitType.Insert(randomRoomElementNumber, "H");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "D"){
+					if(roomExitType[randomRoomElementNumber] == "D"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "J");
 						
@@ -290,12 +289,12 @@ public class MapGenerator : MonoBehaviour {
 						roomExitType.Insert(randomRoomElementNumber, "I");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "B"){
+					if(roomExitType[randomRoomElementNumber] == "B"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "J");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "F"){
+					if(roomExitType[randomRoomElementNumber] == "F"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "G");
 						
@@ -312,12 +311,12 @@ public class MapGenerator : MonoBehaviour {
 						roomExitType.Insert(randomRoomElementNumber, "J");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "E"){
+					if(roomExitType[randomRoomElementNumber] == "E"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "I");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "F"){
+					if(roomExitType[randomRoomElementNumber] == "F"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "H");
 						
@@ -334,20 +333,20 @@ public class MapGenerator : MonoBehaviour {
 						roomExitType.Insert(randomRoomElementNumber, "G");
 						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "B"){
+					if(roomExitType[randomRoomElementNumber] == "B"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "H");
-						break;
+						
 					}
-					else if(roomExitType[randomRoomElementNumber] == "D"){
+					if(roomExitType[randomRoomElementNumber] == "D"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "I");
 						
 					}
-				    
+				}    
 			}
 		}
-	}
+	
 		private void InstantiateRooms(){
 			for(int  i = 0; i< roomExitType.Count; i++){
 				Debug.Log(roomExitType[i]);
