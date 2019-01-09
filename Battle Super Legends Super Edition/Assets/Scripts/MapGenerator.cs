@@ -265,17 +265,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[randomRoomElementNumber] == "C"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "H");
-						
+						Debug.Log("Replaced C with H");
 					}
 					if(roomExitType[randomRoomElementNumber] == "D"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "J");
-						
+						Debug.Log("Replaced D with J");
 					}
 					if(roomExitType[randomRoomElementNumber] == "E"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "G");
-						
+						Debug.Log("Replaced E with G");
 					}		
 				}
 				else if(randomDirection == 2 && canGoDown) {
@@ -287,17 +287,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[randomRoomElementNumber] == "C"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "I");
-						
+						Debug.Log("Replaced C with I");
 					}
 					if(roomExitType[randomRoomElementNumber] == "B"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "J");
-						
+						Debug.Log("Replaced B with J");
 					}
 					if(roomExitType[randomRoomElementNumber] == "F"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "G");
-						
+						Debug.Log("Replaced F with G");
 					}				
 				}
 				else if(randomDirection == 1 && canGoRight) {
@@ -309,17 +309,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[randomRoomElementNumber] == "A"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "J");
-						
+						Debug.Log("Replaced A with J");
 					}
 					if(roomExitType[randomRoomElementNumber] == "E"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "I");
-						
+						Debug.Log("Replaced E with I");
 					}
 					if(roomExitType[randomRoomElementNumber] == "F"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "H");
-						
+						Debug.Log("Replaced F with H");
 					}
 				}
 				else if(randomDirection == 3 && canGoLeft) {
@@ -331,17 +331,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[randomRoomElementNumber] == "A"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "G");
-						
+						Debug.Log("Replaced A with G");
 					}
 					if(roomExitType[randomRoomElementNumber] == "B"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "H");
-						
+						Debug.Log("Replaced B with H");
 					}
 					if(roomExitType[randomRoomElementNumber] == "D"){
 						roomExitType.RemoveAt(randomRoomElementNumber);
 						roomExitType.Insert(randomRoomElementNumber, "I");
-						
+						Debug.Log("Replaced D with I");
 					}
 				}    
 			}
