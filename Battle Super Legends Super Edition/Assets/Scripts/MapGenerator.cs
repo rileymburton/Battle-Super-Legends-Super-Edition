@@ -45,7 +45,6 @@ public class MapGenerator : MonoBehaviour {
 		AssignRoomCode();
 		PlaceRooms();
 		PlaceRandomRooms();
-	//	UpdateRoomCode();
 		InstantiateRooms();
 	}
 	
@@ -252,12 +251,7 @@ public class MapGenerator : MonoBehaviour {
 						break;
 					}
 				}
-				Debug.Log(randomDirection + " Random Direction!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				Debug.Log(canGoDown);
-				Debug.Log(canGoUp);
-				Debug.Log(canGoRight);
-				Debug.Log(canGoLeft);
-				
+			
 				if(randomDirection == 0 && canGoUp) {
 					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
 					currentYPosition += 10;
@@ -287,7 +281,6 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);	
 					roomExitType.Add("A");
-					Debug.Log(roomExitType[i] + " REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");	
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
@@ -310,7 +303,6 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
-					Debug.Log(roomExitType[i] + " REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");	
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
@@ -333,7 +325,7 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
-					Debug.Log(roomExitType[i] + " REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");	
+					
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
