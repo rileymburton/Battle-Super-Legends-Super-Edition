@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour {
 
-	public List <int> spawnDirections = new List<int>();
-	public List <string> roomExitType = new List<string>();	
+	private List <int> spawnDirections = new List<int>();
+	private List <string> roomExitType = new List<string>();	
 
-	public List <int> xPosition = new List<int>();
-	public List <int> yPosition = new List<int>();
+	private List <int> xPosition = new List<int>();
+	private List <int> yPosition = new List<int>();
 	public GameObject roomA;
 	public GameObject roomB;
 	public GameObject roomC;
@@ -101,9 +101,7 @@ public class MapGenerator : MonoBehaviour {
 
 			else if(spawnDirections[i+1] == 0 && spawnDirections[i] == 1){
 				roomExitType.Add("F");
-			}
-			else{
-		}
+			}	
 		}
 		
 		roomExitType.Add("Y");
@@ -258,7 +256,7 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("A");
-							
+					BranchingRooms(currentXPosition, currentYPosition);		
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
@@ -281,6 +279,7 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);	
 					roomExitType.Add("A");
+					BranchingRooms(currentXPosition, currentYPosition);
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
@@ -303,6 +302,7 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
+					BranchingRooms(currentXPosition, currentYPosition);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
@@ -325,7 +325,7 @@ public class MapGenerator : MonoBehaviour {
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
 					roomExitType.Add("C");
-					
+					BranchingRooms(currentXPosition, currentYPosition);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
@@ -345,6 +345,139 @@ public class MapGenerator : MonoBehaviour {
 			}
 		}
 	
+		private void BranchingRooms(int xCoordinate, int yCoordinate){
+			bool canGoUp = true;
+			bool canGoRight = true;
+			bool canGoDown = true;
+			bool canGoLeft = true;
+			int numberOfBranchingRooms = Random.Range(10, 15);
+			List<int> BranchingRoomsDirection = new List<int>();
+			for(int i = 0; i < numberOfBranchingRooms; i++){
+			for(int j = 0; j < xPosition.Count; j++){
+				if(xPosition[j] == xCoordinate && yPosition[j] == yCoordinate + 10){
+					canGoUp = false;
+				}
+				if(xPosition[j] == xCoordinate + 10 && yPosition[j] == yCoordinate){
+					canGoRight = false;
+				}
+				if(xPosition[j] == xCoordinate && yPosition[j] == yCoordinate - 10){
+					canGoDown = false;
+				}
+				if(xPosition[j] == xCoordinate - 10 && yPosition[j] == yCoordinate){
+					canGoLeft = false;
+				}
+				if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
+					break;
+				}
+			}
+			
+			// 0 is up
+			// 1 is right
+			// 2 is down
+			// 3 is left
+			int randomDirection = Random.Range(0,4);
+				while(true){
+					if(randomDirection == 0 && canGoUp == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 1 && canGoRight == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 2 && canGoDown == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 3 && canGoLeft == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else{					
+						break;
+					}
+				}
+			BranchingRoomsDirection.Add(randomDirection);
+		}
+		for(int k = 0; k < BranchingRoomsDirection.Count; k++){
+			if(spawnDirections[k+1] == 0 && spawnDirections[k] == 0){
+				yCoordinate+=10;
+				roomExitType.Add("A");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}
+			else if(spawnDirections[k+1] == 2 && spawnDirections[k] == 2){
+				yCoordinate-=10;
+				roomExitType.Add("A");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+
+			}
+
+			else if (spawnDirections[k+1] == 1 && spawnDirections[k] == 2) {
+				xCoordinate+=10;
+				roomExitType.Add("B");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}
+			else if(spawnDirections[k+1] == 0 && spawnDirections[k] == 3){
+				yCoordinate+=10;
+				roomExitType.Add("B");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+
+			else if(spawnDirections[k+1] == 1 && spawnDirections[k] == 1){
+				xCoordinate+=10;
+				roomExitType.Add("C");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}
+
+			else if(spawnDirections[k+1] == 3 && spawnDirections[k] == 3){
+				xCoordinate-=10;
+				roomExitType.Add("C");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+
+			else if(spawnDirections[k+1] == 1 && spawnDirections[k] == 0){
+				xCoordinate+=10;
+				roomExitType.Add("D");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}
+			else if(spawnDirections[k+1] == 2 && spawnDirections[k] == 3){
+				yCoordinate-=10;
+				roomExitType.Add("D");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+	
+			else if (spawnDirections[k+1] == 2 && spawnDirections[k] == 1){
+				yCoordinate-=10;
+				roomExitType.Add("E");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}
+			else if(spawnDirections[k+1] == 3 && spawnDirections[k] == 0){
+				xCoordinate-=10;
+				roomExitType.Add("E");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+
+			else if(spawnDirections[k+1] == 0 && spawnDirections[k] == 1){
+				yCoordinate+=10;
+				roomExitType.Add("F");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+			else if(spawnDirections[k+1] == 3 && spawnDirections[k] == 2){
+				xCoordinate-=10;
+				roomExitType.Add("F");
+				xPosition.Add(xCoordinate);
+				yPosition.Add(yCoordinate);
+			}	
+			
+		}
+	}
 		private void InstantiateRooms(){
 			for(int  i = 0; i< roomExitType.Count; i++){
 				//Debug.Log(roomExitType[i]);
