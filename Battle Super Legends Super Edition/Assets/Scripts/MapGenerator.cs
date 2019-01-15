@@ -252,11 +252,12 @@ public class MapGenerator : MonoBehaviour {
 			
 				if(randomDirection == 0 && canGoUp) {
 					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
-					currentYPosition += 10;
+					
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
-					roomExitType.Add("A");
-					BranchingRooms(currentXPosition, currentYPosition+10);		
+					currentYPosition += 10;
+					//roomExitType.Add("A");
+					BranchingRooms(currentXPosition, currentYPosition, 0);		
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
@@ -275,11 +276,12 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(randomDirection == 2 && canGoDown) {
 					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);
-					currentYPosition -= 10;
+					
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);	
-					roomExitType.Add("A");
-					BranchingRooms(currentXPosition, currentYPosition-10);
+					currentYPosition -= 10;
+					//roomExitType.Add("A");
+					BranchingRooms(currentXPosition, currentYPosition, 2);
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
@@ -298,11 +300,12 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(randomDirection == 1 && canGoRight) {
 					//Instantiate(roomC, new Vector2(currentXPosition + 10, currentYPosition), Quaternion.identity);
-					currentXPosition += 10;
+				
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
-					roomExitType.Add("C");
-					BranchingRooms(currentXPosition+10, currentYPosition);
+					currentXPosition += 10;
+				//	roomExitType.Add("C");
+					BranchingRooms(currentXPosition, currentYPosition, 1);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
@@ -321,11 +324,12 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(randomDirection == 3 && canGoLeft) {
 					//Instantiate(roomC, new Vector2(currentXPosition - 10, currentYPosition), Quaternion.identity);
-					currentXPosition -= 10;
+					
 					xPosition.Add(currentXPosition);
 					yPosition.Add(currentYPosition);
-					roomExitType.Add("C");
-					BranchingRooms(currentXPosition-10, currentYPosition);
+					currentXPosition -= 10;
+				//	roomExitType.Add("C");
+					BranchingRooms(currentXPosition, currentYPosition, 3);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
@@ -345,13 +349,15 @@ public class MapGenerator : MonoBehaviour {
 			}
 		}
 	
-		private void BranchingRooms(int xCoordinate, int yCoordinate){
+		private void BranchingRooms(int xCoordinate, int yCoordinate, int prevDirection){
+			Debug.Log(xCoordinate + " " + yCoordinate);
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
 			bool canGoLeft = true;
 			int numberOfBranchingRooms = Random.Range(10, 15);
 			List<int> BranchingRoomsDirection = new List<int>();
+			BranchingRoomsDirection.Add(prevDirection);
 			for(int i = 0; i < numberOfBranchingRooms; i++){
 			for(int j = 0; j < xPosition.Count; j++){
 				if(xPosition[j] == xCoordinate && yPosition[j] == yCoordinate + 10){
@@ -395,96 +401,110 @@ public class MapGenerator : MonoBehaviour {
 				}
 			BranchingRoomsDirection.Add(randomDirection);
 		}
+		foreach(int x in BranchingRoomsDirection){
+			Debug.Log(x + " Memers");
+		}
 		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
 			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
-				yCoordinate+=10;
+				
 				roomExitType.Add("A");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
-				
+				yCoordinate+=10;
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 2){
-				yCoordinate-=10;
+				
 				roomExitType.Add("A");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				yCoordinate-=10;
 				
 
 			}
 
 			else if (BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 2) {
-				yCoordinate-=10;
+			
 				roomExitType.Add("B");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+					xCoordinate+=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 3){
-				xCoordinate-=10;
+				
 				roomExitType.Add("B");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				yCoordinate+=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 1){
-				xCoordinate+=10;
+				
 				roomExitType.Add("C");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				xCoordinate+=10;
 			
 			}
 
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 3){
-				xCoordinate-=10;
+				
 				roomExitType.Add("C");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				xCoordinate-=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 0){
-				yCoordinate+=10;
+				
 				roomExitType.Add("D");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				xCoordinate+=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 3){
-				xCoordinate-=10;
+				
 				roomExitType.Add("D");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				yCoordinate-=10;
 				
 			}	
 	
 			else if (BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 1){
-				xCoordinate+=10;
+				
 				roomExitType.Add("E");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				yCoordinate-=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 0){
-				xCoordinate-=10;
+				
 				roomExitType.Add("E");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				xCoordinate-=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 1){
-				xCoordinate+=10;
+				
 				roomExitType.Add("F");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				yCoordinate+=10;
 				
 			}	
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 2){
-				yCoordinate-=10;
+				
 				roomExitType.Add("F");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
+				xCoordinate-=10;
 				
 			}	
 			
