@@ -252,9 +252,6 @@ public class MapGenerator : MonoBehaviour {
 			
 				if(randomDirection == 0 && canGoUp) {
 					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
-					
-					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition);
 					currentYPosition += 10;
 					//roomExitType.Add("A");
 					BranchingRooms(currentXPosition, currentYPosition, 0);		
@@ -275,10 +272,7 @@ public class MapGenerator : MonoBehaviour {
 					}		
 				}
 				else if(randomDirection == 2 && canGoDown) {
-					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);
-					
-					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition);	
+					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);	
 					currentYPosition -= 10;
 					//roomExitType.Add("A");
 					BranchingRooms(currentXPosition, currentYPosition, 2);
@@ -300,9 +294,6 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(randomDirection == 1 && canGoRight) {
 					//Instantiate(roomC, new Vector2(currentXPosition + 10, currentYPosition), Quaternion.identity);
-				
-					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition);
 					currentXPosition += 10;
 				//	roomExitType.Add("C");
 					BranchingRooms(currentXPosition, currentYPosition, 1);
@@ -325,8 +316,6 @@ public class MapGenerator : MonoBehaviour {
 				else if(randomDirection == 3 && canGoLeft) {
 					//Instantiate(roomC, new Vector2(currentXPosition - 10, currentYPosition), Quaternion.identity);
 					
-					xPosition.Add(currentXPosition);
-					yPosition.Add(currentYPosition);
 					currentXPosition -= 10;
 				//	roomExitType.Add("C");
 					BranchingRooms(currentXPosition, currentYPosition, 3);
@@ -423,11 +412,11 @@ public class MapGenerator : MonoBehaviour {
 			}
 
 			else if (BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 2) {
-			
+				
 				roomExitType.Add("B");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
-					xCoordinate+=10;
+				xCoordinate+=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 3){
@@ -458,7 +447,7 @@ public class MapGenerator : MonoBehaviour {
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 0){
-				
+					
 				roomExitType.Add("D");
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
@@ -471,6 +460,7 @@ public class MapGenerator : MonoBehaviour {
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
 				yCoordinate-=10;
+				
 				
 			}	
 	
@@ -498,6 +488,7 @@ public class MapGenerator : MonoBehaviour {
 				yPosition.Add(yCoordinate);
 				yCoordinate+=10;
 				
+				
 			}	
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 2){
 				
@@ -505,6 +496,7 @@ public class MapGenerator : MonoBehaviour {
 				xPosition.Add(xCoordinate);
 				yPosition.Add(yCoordinate);
 				xCoordinate-=10;
+				
 				
 			}	
 			
