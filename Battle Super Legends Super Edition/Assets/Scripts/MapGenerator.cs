@@ -365,6 +365,14 @@ public class MapGenerator : MonoBehaviour {
 					break;
 				}
 			}
+		/* 	Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+			Debug.Log(xCoordinate);
+			Debug.Log(yCoordinate);
+			Debug.Log(canGoUp + " up");
+			Debug.Log(canGoDown + " down");
+			Debug.Log(canGoRight + " right");
+			Debug.Log(canGoLeft + " left");
+			Debug.Log("WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"); */
 			
 			// 0 is up
 			// 1 is right
@@ -391,9 +399,11 @@ public class MapGenerator : MonoBehaviour {
 			BranchingRoomsDirection.Add(randomDirection);
 		}
 		foreach(int x in BranchingRoomsDirection){
-			Debug.Log(x + " Memers");
+		//	Debug.Log(x + " Memers");
 		}
 		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
+			Debug.Log(BranchingRoomsDirection[k] + " current");
+			Debug.Log(BranchingRoomsDirection[k+1] + " next");
 			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
 				
 				roomExitType.Add("A");
