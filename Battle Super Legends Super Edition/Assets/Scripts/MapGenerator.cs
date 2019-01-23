@@ -392,7 +392,7 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomDirection == 3 && (canGoLeft == false || prevDirection == 1)){
 						randomDirection = Random.Range(0,4);
 					}
-					else{
+					else if ((!canGoDown && !canGoUp && !canGoLeft && !canGoRight)||(i == numberOfBranchingRooms-1)){
 						roomExitType.RemoveAt(roomExitType.Count-1);
 						if(randomDirection == 0){
 							roomExitType.Insert(roomExitType.Count-1, "ZBottom");
