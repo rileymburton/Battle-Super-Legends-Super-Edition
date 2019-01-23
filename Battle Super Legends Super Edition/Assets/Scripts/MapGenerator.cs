@@ -200,7 +200,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 
 		private void PlaceRandomRooms(){
-		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(10,25)){
+		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(20,25)){
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
@@ -347,7 +347,7 @@ public class MapGenerator : MonoBehaviour {
 			bool canGoDown = true;
 			bool canGoLeft = true;
 			
-			int numberOfBranchingRooms = Random.Range(20, 30);
+			int numberOfBranchingRooms = Random.Range(10, 15);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
 			for(int i = 0; i < numberOfBranchingRooms; i++){
