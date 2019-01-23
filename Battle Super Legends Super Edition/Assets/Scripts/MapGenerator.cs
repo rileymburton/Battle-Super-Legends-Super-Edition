@@ -393,26 +393,22 @@ public class MapGenerator : MonoBehaviour {
 						randomDirection = Random.Range(0,4);
 					}
 					else{
-						roomExitType.RemoveAt(roomExitType.Count-2);
+						roomExitType.RemoveAt(roomExitType.Count-1);
 						if(randomDirection == 0){
 							roomExitType.Insert(roomExitType.Count-1, "ZBottom");
-							xPosition.Add(xCoordinate);
-							yPosition.Add(yCoordinate);
+							
 						}	
 						else if(randomDirection == 1){
 							roomExitType.Insert(roomExitType.Count-1, "ZLeft");
-							xPosition.Add(xCoordinate);
-							yPosition.Add(yCoordinate);
+							
 						}		
 						else if(randomDirection == 2){
 							roomExitType.Insert(roomExitType.Count-1, "ZTop");
-							xPosition.Add(xCoordinate);
-							yPosition.Add(yCoordinate);
+							
 						}	
 						else if(randomDirection == 3){
 							roomExitType.Insert(roomExitType.Count-1, "ZRight");
-							xPosition.Add(xCoordinate);
-							yPosition.Add(yCoordinate);
+							
 						}	
 						break;
 					}
