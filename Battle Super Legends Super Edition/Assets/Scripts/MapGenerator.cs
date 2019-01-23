@@ -200,7 +200,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 
 		private void PlaceRandomRooms(){
-		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(25,50)){
+		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(10,25)){
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
@@ -339,84 +339,94 @@ public class MapGenerator : MonoBehaviour {
 		}
 	
 		private void BranchingRooms(int xCoordinate, int yCoordinate, int prevDirection){
-			Debug.Log(xCoordinate + " " + yCoordinate);
+			//Debug.Log(xCoordinate + " " + yCoordinate);
+			int initialXCoordinate = xCoordinate;
+			int initialYCoordinate = yCoordinate;
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
 			bool canGoLeft = true;
-			int numberOfBranchingRooms = Random.Range(10, 15);
+			
+			int numberOfBranchingRooms = Random.Range(20, 30);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
 			for(int i = 0; i < numberOfBranchingRooms; i++){
 			for(int j = 0; j < xPosition.Count; j++){
-				if(xPosition[j] == xCoordinate && yPosition[j] == yCoordinate + 10){
+			
+				if(xPosition[j] == xCoordinate && yPosition[j] == (yCoordinate + 10)){
 					canGoUp = false;
 				}
-				if(xPosition[j] == xCoordinate + 10 && yPosition[j] == yCoordinate){
+				if(xPosition[j] == (xCoordinate + 10) && yPosition[j] == yCoordinate){
 					canGoRight = false;
 				}
-				if(xPosition[j] == xCoordinate && yPosition[j] == yCoordinate - 10){
+				if(xPosition[j] == xCoordinate && yPosition[j] == (yCoordinate - 10)){
 					canGoDown = false;
 				}
-				if(xPosition[j] == xCoordinate - 10 && yPosition[j] == yCoordinate){
+				if(xPosition[j] == (xCoordinate - 10) && yPosition[j] == yCoordinate){
 					canGoLeft = false;
 				}
 				if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
 					break;
 				}
 			}
-		/* 	Debug.Log("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-			Debug.Log(xCoordinate);
-			Debug.Log(yCoordinate);
-			Debug.Log(canGoUp + " up");
-			Debug.Log(canGoDown + " down");
-			Debug.Log(canGoRight + " right");
-			Debug.Log(canGoLeft + " left");
-			Debug.Log("WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"); */
-			
+			Debug.Log(" ****");
+			Debug.Log(xCoordinate + " " + yCoordinate);
+			Debug.Log(canGoDown + " canGoDown");
+			Debug.Log(canGoUp + " canGoUp");
+			Debug.Log(canGoLeft + " canGoLeft");
+			Debug.Log(canGoRight + " canGoRight");
+			Debug.Log(" xxxx");
 			// 0 is up
 			// 1 is right
 			// 2 is down
 			// 3 is left
 			int randomDirection = Random.Range(0,4);
 				while(true){
-					if(randomDirection == 0 && canGoUp == false){
+					if(randomDirection == 0 && (canGoUp == false || prevDirection == 2)){
 						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 1 && canGoRight == false){
+					else if(randomDirection == 1 && (canGoRight == false || prevDirection == 3)){
 						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 2 && canGoDown == false){
+					else if(randomDirection == 2 && (canGoDown == false || prevDirection == 0)){
 						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 3 && canGoLeft == false){
+					else if(randomDirection == 3 && (canGoLeft == false || prevDirection == 1)){
 						randomDirection = Random.Range(0,4);
 					}
 					else{					
 						break;
 					}
 				}
+				if(randomDirection == 0){
+					yCoordinate +=10;
+				}
+				else if (randomDirection == 1){
+					xCoordinate +=10;
+				}
+				else if (randomDirection == 2){
+					yCoordinate -= 10;
+				}
+				else if( randomDirection == 3){
+					xCoordinate -=10;
+				}
 			BranchingRoomsDirection.Add(randomDirection);
-		}
-		foreach(int x in BranchingRoomsDirection){
-		//	Debug.Log(x + " Memers");
+			prevDirection = randomDirection;
 		}
 		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
-			Debug.Log(BranchingRoomsDirection[k] + " current");
-			Debug.Log(BranchingRoomsDirection[k+1] + " next");
 			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
 				
 				roomExitType.Add("A");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate+=10;
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 2){
 				
 				roomExitType.Add("A");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate-=10;
 				
 
 			}
@@ -424,52 +434,52 @@ public class MapGenerator : MonoBehaviour {
 			else if (BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 2) {
 				
 				roomExitType.Add("B");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate+=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 3){
 				
 				roomExitType.Add("B");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate+=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 1){
 				
 				roomExitType.Add("C");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate+=10;
 			
 			}
 
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 3){
 				
 				roomExitType.Add("C");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate-=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 0){
 					
 				roomExitType.Add("D");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate+=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 3){
 				
 				roomExitType.Add("D");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate-=10;
 				
 				
 			}	
@@ -477,35 +487,35 @@ public class MapGenerator : MonoBehaviour {
 			else if (BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 1){
 				
 				roomExitType.Add("E");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate-=10;
 				
 			}
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 0){
 				
 				roomExitType.Add("E");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate-=10;
 				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 1){
 				
 				roomExitType.Add("F");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				yCoordinate+=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialYCoordinate+=10;
 				
 				
 			}	
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 2){
 				
 				roomExitType.Add("F");
-				xPosition.Add(xCoordinate);
-				yPosition.Add(yCoordinate);
-				xCoordinate-=10;
+				xPosition.Add(initialXCoordinate);
+				yPosition.Add(initialYCoordinate);
+				initialXCoordinate-=10;
 				
 				
 			}	
