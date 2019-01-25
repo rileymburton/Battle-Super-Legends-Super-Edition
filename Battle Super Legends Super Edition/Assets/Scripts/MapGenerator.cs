@@ -40,7 +40,7 @@ public class MapGenerator : MonoBehaviour {
 	void Start () {
 		
 		numberOfRooms = Random.Range(100,200);
-		Debug.Log("Number of Rooms = " + numberOfRooms);
+		//Debug.Log("Number of Rooms = " + numberOfRooms);
 		GenerateMap();
 		AssignRoomCode();
 		PlaceRooms();
@@ -105,6 +105,9 @@ public class MapGenerator : MonoBehaviour {
 		}
 		
 		roomExitType.Add("Y");
+		foreach(string x in roomExitType){
+			//Debug.Log(x);
+		}
 	}
 
 	private void PlaceRooms(){
@@ -197,7 +200,7 @@ public class MapGenerator : MonoBehaviour {
 		}
 
 		private void PlaceRandomRooms(){
-		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(10,18)){
+		for(int i = Random.Range(5, 10); i <numberOfRooms -1; i+= Random.Range(10,25)){
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
@@ -255,17 +258,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-					//	Debug.Log("Replaced C with H");
+						//Debug.Log("Replaced C with H");
 					}
 					if(roomExitType[i] == "D"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-					//	Debug.Log("Replaced D with J");
+						//Debug.Log("Replaced D with J");
 					}
 					if(roomExitType[i] == "E"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
-					//	Debug.Log("Replaced E with G");
+						//Debug.Log("Replaced E with G");
 					}		
 				}
 				else if(randomDirection == 2 && canGoDown) {
@@ -276,12 +279,12 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-					//	Debug.Log("Replaced C with I");
+						//Debug.Log("Replaced C with I");
 					}
 					if(roomExitType[i] == "B"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-					//	Debug.Log("Replaced B with J");
+						//Debug.Log("Replaced B with J");
 					}
 					if(roomExitType[i] == "F"){
 						roomExitType.RemoveAt(i);
@@ -297,17 +300,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-					//	Debug.Log("Replaced A with J");
+						//Debug.Log("Replaced A with J");
 					}
 					if(roomExitType[i] == "E"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-					//	Debug.Log("Replaced E with I");
+						//Debug.Log("Replaced E with I");
 					}
 					if(roomExitType[i] == "F"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-					//	Debug.Log("Replaced F with H");
+						//Debug.Log("Replaced F with H");
 					}
 				}
 				else if(randomDirection == 3 && canGoLeft) {
@@ -319,17 +322,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
-					//	Debug.Log("Replaced A with G");
+						//Debug.Log("Replaced A with G");
 					}
 					if(roomExitType[i] == "B"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-					//	Debug.Log("Replaced B with H");
+						//Debug.Log("Replaced B with H");
 					}
 					if(roomExitType[i] == "D"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-					//	Debug.Log("Replaced D with I");
+						//Debug.Log("Replaced D with I");
 					}
 				}    
 			}
@@ -344,7 +347,7 @@ public class MapGenerator : MonoBehaviour {
 			bool canGoDown = true;
 			bool canGoLeft = true;
 			
-			int numberOfBranchingRooms = Random.Range(10, 15);
+			int numberOfBranchingRooms = Random.Range(20, 30);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
 			for(int i = 0; i < numberOfBranchingRooms; i++){
@@ -363,17 +366,16 @@ public class MapGenerator : MonoBehaviour {
 					canGoLeft = false;
 				}
 				if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
-
 					break;
 				}
 			}
-		//	Debug.Log(" ****");
+			//Debug.Log(" ****");
 			//Debug.Log(xCoordinate + " " + yCoordinate);
 			//Debug.Log(canGoDown + " canGoDown");
-		//	Debug.Log(canGoUp + " canGoUp");
-		//	Debug.Log(canGoLeft + " canGoLeft");
-		//	Debug.Log(canGoRight + " canGoRight");
-		//	Debug.Log(" xxxx");
+			//Debug.Log(canGoUp + " canGoUp");
+			//Debug.Log(canGoLeft + " canGoLeft");
+			//Debug.Log(canGoRight + " canGoRight");
+			//Debug.Log(" xxxx");
 			// 0 is up
 			// 1 is right
 			// 2 is down
@@ -392,24 +394,7 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomDirection == 3 && (canGoLeft == false || prevDirection == 1)){
 						randomDirection = Random.Range(0,4);
 					}
-					else if ((!canGoDown && !canGoUp && !canGoLeft && !canGoRight)||(i == numberOfBranchingRooms-1)){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						if(randomDirection == 0){
-							roomExitType.Insert(roomExitType.Count-1, "ZBottom");
-							
-						}	
-						else if(randomDirection == 1){
-							roomExitType.Insert(roomExitType.Count-1, "ZLeft");
-							
-						}		
-						else if(randomDirection == 2){
-							roomExitType.Insert(roomExitType.Count-1, "ZTop");
-							
-						}	
-						else if(randomDirection == 3){
-							roomExitType.Insert(roomExitType.Count-1, "ZRight");
-							
-						}	
+					else{					
 						break;
 					}
 				}
@@ -427,7 +412,6 @@ public class MapGenerator : MonoBehaviour {
 				}
 			BranchingRoomsDirection.Add(randomDirection);
 			prevDirection = randomDirection;
-
 		}
 		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
 			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
@@ -596,18 +580,6 @@ public class MapGenerator : MonoBehaviour {
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 2){
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				
-				}
-				else if(roomExitType[i] == "ZBottom"){
-					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				}
-				else if(roomExitType[i] == "ZTop"){
-					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				}
-				else if(roomExitType[i] == "ZLeft"){
-					Instantiate(roomLeftExitY, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				}
-				else if(roomExitType[i] == "ZRight"){
-					Instantiate(roomRightExitZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 			}
 		}
