@@ -231,23 +231,22 @@ public class MapGenerator : MonoBehaviour {
 			// 1 is right
 			// 2 is down
 			// 3 is left
-			int randomDirection = Random.Range(0,4);
+			int randomDirection; 
 				while(true){
-					if(randomDirection == 0 && canGoUp == false){
-						randomDirection = Random.Range(0,4);
-					}
-					else if(randomDirection == 1 && canGoRight == false){
-						randomDirection = Random.Range(0,4);
-					}
-					else if(randomDirection == 2 && canGoDown == false){
-						randomDirection = Random.Range(0,4);
-					}
-					else if(randomDirection == 3 && canGoLeft == false){
-						randomDirection = Random.Range(0,4);
-					}
-					else{					
+					randomDirection = Random.Range(0,4);
+					if(randomDirection == 0 && canGoUp){
 						break;
 					}
+					else if(randomDirection == 1 && canGoRight){
+						break;
+					}
+					else if(randomDirection == 2 && canGoDown){
+						break;
+					}
+					else if(randomDirection == 3 && canGoLeft){
+						break;
+					}
+					
 				}
 			
 				if(randomDirection == 0 && canGoUp) {
@@ -380,19 +379,20 @@ public class MapGenerator : MonoBehaviour {
 			// 1 is right
 			// 2 is down
 			// 3 is left
-			int randomDirection = Random.Range(0,4);
+			int randomDirection;
 				while(true){
-					if(randomDirection == 0 && (canGoUp == false || prevDirection == 2)){
-						randomDirection = Random.Range(0,4);
+					randomDirection = Random.Range(0,4);
+					if(randomDirection == 0 && canGoUp && prevDirection != 2){
+						break;
 					}
-					else if(randomDirection == 1 && (canGoRight == false || prevDirection == 3)){
-						randomDirection = Random.Range(0,4);
+					else if(randomDirection == 1 && canGoRight && prevDirection != 3){
+						break;
 					}
-					else if(randomDirection == 2 && (canGoDown == false || prevDirection == 0)){
-						randomDirection = Random.Range(0,4);
+					else if(randomDirection == 2 && canGoDown && prevDirection != 0){
+						break;
 					}
-					else if(randomDirection == 3 && (canGoLeft == false || prevDirection == 1)){
-						randomDirection = Random.Range(0,4);
+					else if(randomDirection == 3 && canGoLeft && prevDirection != 1){
+						break;
 					}
 					else{					
 						break;
