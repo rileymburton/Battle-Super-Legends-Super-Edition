@@ -40,7 +40,7 @@ public class MapGenerator : MonoBehaviour {
 	void Start () {
 		
 		numberOfRooms = Random.Range(100,200);
-		//Debug.Log("Number of Rooms = " + numberOfRooms);
+		Debug.Log("Number of Rooms = " + numberOfRooms);
 		GenerateMap();
 		AssignRoomCode();
 		PlaceRooms();
@@ -231,22 +231,23 @@ public class MapGenerator : MonoBehaviour {
 			// 1 is right
 			// 2 is down
 			// 3 is left
-			int randomDirection; 
+			int randomDirection = Random.Range(0,4);
 				while(true){
-					randomDirection = Random.Range(0,4);
-					if(randomDirection == 0 && canGoUp){
+					if(randomDirection == 0 && canGoUp == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 1 && canGoRight == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 2 && canGoDown == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else if(randomDirection == 3 && canGoLeft == false){
+						randomDirection = Random.Range(0,4);
+					}
+					else{					
 						break;
 					}
-					else if(randomDirection == 1 && canGoRight){
-						break;
-					}
-					else if(randomDirection == 2 && canGoDown){
-						break;
-					}
-					else if(randomDirection == 3 && canGoLeft){
-						break;
-					}
-					
 				}
 			
 				if(randomDirection == 0 && canGoUp) {
@@ -257,17 +258,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-						//Debug.Log("Replaced C with H");
+						Debug.Log("Replaced C with H");
 					}
 					if(roomExitType[i] == "D"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-						//Debug.Log("Replaced D with J");
+						Debug.Log("Replaced D with J");
 					}
 					if(roomExitType[i] == "E"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
-						//Debug.Log("Replaced E with G");
+						Debug.Log("Replaced E with G");
 					}		
 				}
 				else if(randomDirection == 2 && canGoDown) {
@@ -278,17 +279,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-						//Debug.Log("Replaced C with I");
+						Debug.Log("Replaced C with I");
 					}
 					if(roomExitType[i] == "B"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-						//Debug.Log("Replaced B with J");
+						Debug.Log("Replaced B with J");
 					}
 					if(roomExitType[i] == "F"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
-						//Debug.Log("Replaced F with G");
+						Debug.Log("Replaced F with G");
 					}				
 				}
 				else if(randomDirection == 1 && canGoRight) {
@@ -299,17 +300,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "J");
-						//Debug.Log("Replaced A with J");
+						Debug.Log("Replaced A with J");
 					}
 					if(roomExitType[i] == "E"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-						//Debug.Log("Replaced E with I");
+						Debug.Log("Replaced E with I");
 					}
 					if(roomExitType[i] == "F"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-						//Debug.Log("Replaced F with H");
+						Debug.Log("Replaced F with H");
 					}
 				}
 				else if(randomDirection == 3 && canGoLeft) {
@@ -321,17 +322,17 @@ public class MapGenerator : MonoBehaviour {
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "G");
-						//Debug.Log("Replaced A with G");
+						Debug.Log("Replaced A with G");
 					}
 					if(roomExitType[i] == "B"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "H");
-						//Debug.Log("Replaced B with H");
+						Debug.Log("Replaced B with H");
 					}
 					if(roomExitType[i] == "D"){
 						roomExitType.RemoveAt(i);
 						roomExitType.Insert(i, "I");
-						//Debug.Log("Replaced D with I");
+						Debug.Log("Replaced D with I");
 					}
 				}    
 			}
@@ -368,31 +369,30 @@ public class MapGenerator : MonoBehaviour {
 					break;
 				}
 			}
-			//Debug.Log(" ****");
-			//Debug.Log(xCoordinate + " " + yCoordinate);
-			//Debug.Log(canGoDown + " canGoDown");
-			//Debug.Log(canGoUp + " canGoUp");
-			//Debug.Log(canGoLeft + " canGoLeft");
-			//Debug.Log(canGoRight + " canGoRight");
-			//Debug.Log(" xxxx");
+			Debug.Log(" ****");
+			Debug.Log(xCoordinate + " " + yCoordinate);
+			Debug.Log(canGoDown + " canGoDown");
+			Debug.Log(canGoUp + " canGoUp");
+			Debug.Log(canGoLeft + " canGoLeft");
+			Debug.Log(canGoRight + " canGoRight");
+			Debug.Log(" xxxx");
 			// 0 is up
 			// 1 is right
 			// 2 is down
 			// 3 is left
-			int randomDirection;
+			int randomDirection = Random.Range(0,4);
 				while(true){
-					randomDirection = Random.Range(0,4);
-					if(randomDirection == 0 && canGoUp && prevDirection != 2){
-						break;
+					if(randomDirection == 0 && (canGoUp == false || prevDirection == 2)){
+						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 1 && canGoRight && prevDirection != 3){
-						break;
+					else if(randomDirection == 1 && (canGoRight == false || prevDirection == 3)){
+						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 2 && canGoDown && prevDirection != 0){
-						break;
+					else if(randomDirection == 2 && (canGoDown == false || prevDirection == 0)){
+						randomDirection = Random.Range(0,4);
 					}
-					else if(randomDirection == 3 && canGoLeft && prevDirection != 1){
-						break;
+					else if(randomDirection == 3 && (canGoLeft == false || prevDirection == 1)){
+						randomDirection = Random.Range(0,4);
 					}
 					else{					
 						break;
