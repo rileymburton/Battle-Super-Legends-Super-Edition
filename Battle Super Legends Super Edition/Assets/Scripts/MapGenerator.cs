@@ -345,6 +345,7 @@ public class MapGenerator : MonoBehaviour {
 			int numberOfBranchingRooms = Random.Range(20, 30);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
+			int randomDirection;
 			for(int i = 0; i< numberOfBranchingRooms; i++){
 				canGoUp = true;
 				canGoRight = true;
@@ -366,11 +367,74 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 			if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
+				Debug.Log("Replace Room With Exit Room");
+				if(prevDirection == 0){
+					if(roomExitType[roomExitType.Count-1] == "A"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
+					}
+					
+					else if(roomExitType[roomExitType.Count-1] == "D"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "E"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
+					}
+				}
+				else if(prevDirection == 1){
+					if(roomExitType[roomExitType.Count-1] == "C"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "E"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "F"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
+					}
+				}
+				else if(prevDirection == 2){
+					if(roomExitType[roomExitType.Count-1] == "A"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "B"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
+					}
+					
+					else if(roomExitType[roomExitType.Count-1] == "F"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
+					}
+				}
+				else if(prevDirection == 3){
+					if(roomExitType[roomExitType.Count-1] == "B"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "C"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
+					}
+					
+					else if(roomExitType[roomExitType.Count-1] == "D"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
+					}
+				}
+
+				Debug.Log("Replacing Room with Exit Room finished");
 				continue;
 			}
-			int randomDirection;
+			
 			while(true){
 				randomDirection = Random.Range(0,4);
+
 					if(randomDirection == 0 && prevDirection != 2 && canGoUp){
 						BranchingRoomsDirection.Add(randomDirection);
 						prevDirection = randomDirection;
@@ -404,9 +468,6 @@ public class MapGenerator : MonoBehaviour {
 						break;
 					}
 				}
-				
-					
-				
 			}
 		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
 			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
@@ -527,6 +588,21 @@ public class MapGenerator : MonoBehaviour {
 				else if(roomExitType[i] == "J"){
 					Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
+
+				else if(roomExitType[i] == "XTopExit"){
+					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "XBottomExit"){
+					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "XRightExit"){
+					Instantiate(roomRightExitZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+				else if(roomExitType[i] == "XLeftExit"){
+					Instantiate(roomLeftExitY, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+				}
+
+
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					
