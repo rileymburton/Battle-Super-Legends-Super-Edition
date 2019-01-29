@@ -367,68 +367,6 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 			if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
-				Debug.Log("Replace Room With Exit Room");
-				if(prevDirection == 0){
-					if(roomExitType[roomExitType.Count-1] == "A"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
-					}
-					
-					else if(roomExitType[roomExitType.Count-1] == "D"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "E"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XBottomExit");
-					}
-				}
-				else if(prevDirection == 1){
-					if(roomExitType[roomExitType.Count-1] == "C"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "E"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "F"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XLeftExit");
-					}
-				}
-				else if(prevDirection == 2){
-					if(roomExitType[roomExitType.Count-1] == "A"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "B"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
-					}
-					
-					else if(roomExitType[roomExitType.Count-1] == "F"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XTopExit");
-					}
-				}
-				else if(prevDirection == 3){
-					if(roomExitType[roomExitType.Count-1] == "B"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "C"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
-					}
-					
-					else if(roomExitType[roomExitType.Count-1] == "D"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Insert(roomExitType.Count-1, "XRightExit");
-					}
-				}
-
-				Debug.Log("Replacing Room with Exit Room finished");
 				continue;
 			}
 			
