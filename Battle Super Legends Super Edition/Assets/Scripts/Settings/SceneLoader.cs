@@ -30,7 +30,7 @@ public class SceneLoader : MonoBehaviour {
 			panel.gameObject.SetActive(false);
 	}
 	public void startMapSelect(){
-		
+		SceneManager.LoadScene(4);
 	}
 
 	public void startKeyBindings(){

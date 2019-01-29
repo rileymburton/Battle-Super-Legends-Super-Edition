@@ -140,10 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035f2ac9a0b707744b94dd677bea00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDirections: 
-  roomExitType: []
-  xPosition: 
-  yPosition: 
   roomA: {fileID: 1415610887169994, guid: 0702ed04d4fcca746ae3d65a83b3b457, type: 2}
   roomB: {fileID: 1851178761541006, guid: c0480598e5c24ef4a97721b188fa8ea9, type: 2}
   roomC: {fileID: 1829026701295364, guid: 2b50ad8cc95f0b64fa05fe27091d46cd, type: 2}
@@ -169,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722803906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2577517, y: -0.53537464, z: -0.76497823}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
