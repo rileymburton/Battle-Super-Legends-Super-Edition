@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hm: {fileID: 1771348413}
+  Kb: {fileID: 1771348412}
   facingRight: 1
   action: 0
   playerHealth: 0

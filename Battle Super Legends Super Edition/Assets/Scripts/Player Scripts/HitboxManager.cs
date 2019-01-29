@@ -19,6 +19,7 @@ public class HitboxManager : MonoBehaviour {
         CombinedMove Cm = this.GetComponent<CombinedMove>();
         offsetSwap      = 1;
         hitbox.enabled  = false;
+        move = false;
     }
 
     void Update()
@@ -40,6 +41,10 @@ public class HitboxManager : MonoBehaviour {
             hitbox.size = new Vector2(.25f, .25f);//set size
             hitbox.offset = new Vector2(.64f * offsetSwap, .64f);//set offset
             playerDamage = Cm.lightAttackDamage;
+        }
+        if (Cm.action == 0)
+        {
+            move = false;
         }
     }
  
@@ -64,6 +69,8 @@ public class HitboxManager : MonoBehaviour {
     public void end()
     {
         Cm.action = 0;
+        hitbox.enabled = false;
+        move = false;
         animator.SetInteger("action", 0);
         Debug.Log("Action set to 0");
     }

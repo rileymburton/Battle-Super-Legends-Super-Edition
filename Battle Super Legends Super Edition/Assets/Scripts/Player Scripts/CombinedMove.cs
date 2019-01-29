@@ -5,6 +5,7 @@ using UnityEngine;
 public class CombinedMove : MonoBehaviour {
 
 	public HitboxManager Hm;
+	public KeybindingsScript Kb;
 	private int   dashSpeedInputDuration = 40;
 
 	//used by animator
@@ -15,6 +16,7 @@ public class CombinedMove : MonoBehaviour {
 	int            moveDirection;
 	int            direction;
 	bool           grounded;
+	Vector2        prevYPos;
 
 	//used by movement
 	int   setAirOptions;
@@ -27,8 +29,7 @@ public class CombinedMove : MonoBehaviour {
 	float setJumpHeight;
 	float speedMultiplier;
 
-	Vector2 prevYPos;
-
+	//used for combat
 	public int playerHealth;
 	public int maxHealth = 100;
 	public int lightAttackDamage = 50;
@@ -89,7 +90,7 @@ public class CombinedMove : MonoBehaviour {
 		if (Input.GetKey(KeybindingsScript.Kb.left) &&
 			!Input.GetKey(KeybindingsScript.Kb.right))
 		{
-			moveDirection = 1;
+			moveDirection = -1;
 			if (buttonHeld >= dashSpeedInputDuration)
 			{
 				speedMultiplier = dashSpeed*-1;
@@ -148,13 +149,17 @@ public class CombinedMove : MonoBehaviour {
 			}
 		}
 
-		if (action == 1 && Hm.move == true)
+		if (Hm.move)
 		{
-			transform.Translate(1 * moveDirection, 0, 0);
-		}
-		if (action == 2 && Hm.move == true)
-		{
-			transform.Translate(1 * moveDirection, .5f, 0);
+			if (action == 1)
+			{
+				transform.Translate(0, 0, 0);
+			}
+			if (action == 2)
+			{
+				grounded = false;
+				transform.Translate(0, .15f, 0);
+			}
 		}
 
 		//resets when keys are released
