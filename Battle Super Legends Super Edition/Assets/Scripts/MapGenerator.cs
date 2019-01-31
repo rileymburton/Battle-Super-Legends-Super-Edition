@@ -21,6 +21,14 @@ public class MapGenerator : MonoBehaviour {
 	public GameObject roomI;
 	public GameObject roomJ;
 
+	public GameObject roomXLeft;
+
+	public GameObject roomXRight;
+
+	public GameObject roomXBottom;
+
+	public GameObject roomXTop;
+
 	public GameObject roomLeftExitY;
 	public GameObject roomRightExitZ;
 	public GameObject roomBottomExitYZ;
@@ -367,6 +375,64 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 			if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
+				Debug.Log(prevDirection + " Previous Direction");
+				Debug.Log(roomExitType[roomExitType.Count-1] + " Room Replaced");
+				if(prevDirection == 0){
+					if(roomExitType[roomExitType.Count-1] == "A"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XBottomExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "D"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XLeftExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "E"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XRightExit");
+					}
+				}
+				else if(prevDirection == 1){
+					if(roomExitType[roomExitType.Count-1] == "C"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XLeftExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "E"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XTopExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "F"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XBottomExit");
+					}
+				}
+				else if(prevDirection == 2){
+					if(roomExitType[roomExitType.Count-1] == "A"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XTopExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "B"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XLeftExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "F"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XRightExit");
+					}
+				}
+				else if(prevDirection == 3){
+					if(roomExitType[roomExitType.Count-1] == "B"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XBottomExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "C"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XRightExit");
+					}
+					else if(roomExitType[roomExitType.Count-1] == "D"){
+						roomExitType.RemoveAt(roomExitType.Count-1);
+						roomExitType.Add("XTopExit");
+					}
+				}
 				continue;
 			}
 			
@@ -528,16 +594,16 @@ public class MapGenerator : MonoBehaviour {
 				}
 
 				else if(roomExitType[i] == "XTopExit"){
-					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 				else if(roomExitType[i] == "XBottomExit"){
-					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 				else if(roomExitType[i] == "XRightExit"){
-					Instantiate(roomRightExitZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 				else if(roomExitType[i] == "XLeftExit"){
-					Instantiate(roomLeftExitY, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 
 
