@@ -50,7 +50,6 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
@@ -117,7 +116,8 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 722803908}
@@ -133,36 +133,43 @@ GameObject:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722803906}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 035f2ac9a0b707744b94dd677bea00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomA: {fileID: 1415610887169994, guid: 0702ed04d4fcca746ae3d65a83b3b457, type: 2}
-  roomB: {fileID: 1851178761541006, guid: c0480598e5c24ef4a97721b188fa8ea9, type: 2}
-  roomC: {fileID: 1829026701295364, guid: 2b50ad8cc95f0b64fa05fe27091d46cd, type: 2}
-  roomD: {fileID: 1840190992579662, guid: 16f4d308db289bc43bee6db79b8326a2, type: 2}
-  roomE: {fileID: 1197278960333648, guid: e3ff434527f59894fb2f664bcafb619e, type: 2}
-  roomF: {fileID: 1844601767521576, guid: 1b35aeb027623c442b8c39a1363a98b2, type: 2}
-  roomG: {fileID: 1714969631754304, guid: cca9ebf6f251f6249bce6e416589fda8, type: 2}
-  roomH: {fileID: 1301500029921262, guid: 7b0916943a6eeac44b453546e620a45a, type: 2}
-  roomI: {fileID: 1382081071531598, guid: d45bef716fdd78a41b5c2ca8191fe355, type: 2}
-  roomJ: {fileID: 1491190709335340, guid: 36def50b6352dec4eb1a09f998141843, type: 2}
+  roomA: {fileID: 1415610887169994, guid: 0702ed04d4fcca746ae3d65a83b3b457, type: 3}
+  roomB: {fileID: 1851178761541006, guid: c0480598e5c24ef4a97721b188fa8ea9, type: 3}
+  roomC: {fileID: 1829026701295364, guid: 2b50ad8cc95f0b64fa05fe27091d46cd, type: 3}
+  roomD: {fileID: 1840190992579662, guid: 16f4d308db289bc43bee6db79b8326a2, type: 3}
+  roomE: {fileID: 1197278960333648, guid: e3ff434527f59894fb2f664bcafb619e, type: 3}
+  roomF: {fileID: 1844601767521576, guid: 1b35aeb027623c442b8c39a1363a98b2, type: 3}
+  roomG: {fileID: 1714969631754304, guid: cca9ebf6f251f6249bce6e416589fda8, type: 3}
+  roomH: {fileID: 1301500029921262, guid: 7b0916943a6eeac44b453546e620a45a, type: 3}
+  roomI: {fileID: 1382081071531598, guid: d45bef716fdd78a41b5c2ca8191fe355, type: 3}
+  roomJ: {fileID: 1491190709335340, guid: 36def50b6352dec4eb1a09f998141843, type: 3}
+  roomXLeft: {fileID: 1098985903532000, guid: c46b4a3902ae10f4f9c7c4d9a46d6eb6, type: 3}
+  roomXRight: {fileID: 1637385734931376, guid: 403633552e78e734d8bc4d92e5f128c5, type: 3}
+  roomXBottom: {fileID: 1689445815194440, guid: 5ac7b38bcbfe29b46b0fdfbc80126951,
+    type: 3}
+  roomXTop: {fileID: 1181432927292676, guid: 29f2fa7e8075a254ba92acaf61997ddb, type: 3}
   roomLeftExitY: {fileID: 1098985903532000, guid: c46b4a3902ae10f4f9c7c4d9a46d6eb6,
-    type: 2}
+    type: 3}
   roomRightExitZ: {fileID: 1637385734931376, guid: 403633552e78e734d8bc4d92e5f128c5,
-    type: 2}
+    type: 3}
   roomBottomExitYZ: {fileID: 1689445815194440, guid: 5ac7b38bcbfe29b46b0fdfbc80126951,
-    type: 2}
+    type: 3}
   roomTopExitYZ: {fileID: 1181432927292676, guid: 29f2fa7e8075a254ba92acaf61997ddb,
-    type: 2}
+    type: 3}
 --- !u!4 &722803908
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722803906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -175,7 +182,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2128927668}
@@ -192,14 +200,16 @@ GameObject:
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128927665}
   m_Enabled: 1
 --- !u!20 &2128927667
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128927665}
   m_Enabled: 1
   serializedVersion: 2
@@ -208,6 +218,7 @@ Camera:
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -239,7 +250,8 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128927665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
