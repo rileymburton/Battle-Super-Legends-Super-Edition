@@ -520,49 +520,179 @@ public class MapGenerator : MonoBehaviour {
 	
 		private void InstantiateRooms(){
 			for(int  i = 0; i< roomExitType.Count; i++){
+				int randomChoice;
 				//Debug.Log(roomExitType[i]);
 				if(roomExitType[i] == "A"){
-					Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "B"){
-					Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					
 				}
 				else if(roomExitType[i] == "C"){
-					Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "D"){
-					Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					
 				}
 				else if(roomExitType[i] == "E"){
-					Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					
 				}
 				else if(roomExitType[i] == "F"){
-					Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "G"){
-					Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				}
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				else if(roomExitType[i] == "H"){
-					Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "I"){
-					Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "J"){
-					Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 
 				else if(roomExitType[i] == "XTopExit"){
-					Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					
 				}
 				else if(roomExitType[i] == "XBottomExit"){
-					Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "XRightExit"){
-					Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 				else if(roomExitType[i] == "XLeftExit"){
-					Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						randomChoice = Random.Range(0,2);
+					if(randomChoice == 0){
+						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 1){
+						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
+					else if(randomChoice == 2){
+						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+					}
 				}
 
 
@@ -594,4 +724,4 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
-}
+	
