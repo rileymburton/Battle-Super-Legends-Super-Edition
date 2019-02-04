@@ -38,8 +38,8 @@ public class HitboxManager : MonoBehaviour {
             playerDamage = Cm.lightAttackDamage;
         } else if (Cm.action == 2)//H
         {
-            hitbox.size = new Vector2(.25f, .25f);//set size
-            hitbox.offset = new Vector2(.64f * offsetSwap, .64f);//set offset
+            hitbox.size = new Vector2(.25f, .5f);//set size
+            hitbox.offset = new Vector2(.15f * offsetSwap, 0);//set offset
             playerDamage = Cm.lightAttackDamage;
         }
         if (Cm.action == 0)

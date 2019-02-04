@@ -75,6 +75,7 @@ public class CombinedMove : MonoBehaviour {
 			{
 				airOptions--;
 			}
+			transform.Translate((.15f*moveDirection), 0, 0);
 		}
 		//heavy attack
 		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate H
@@ -84,6 +85,7 @@ public class CombinedMove : MonoBehaviour {
 			{
 				airOptions--;
 			}
+			transform.position = getJump();
 		}
 
 		//move left
@@ -139,6 +141,7 @@ public class CombinedMove : MonoBehaviour {
 		//jump
 		if (Input.GetKeyDown(KeybindingsScript.Kb.jump))
 		{
+			animator.SetInteger("moveDirection", 2);
 			action = 0;
 			if (grounded)
 				transform.position = getJump();
@@ -146,19 +149,6 @@ public class CombinedMove : MonoBehaviour {
 			{
 				airOptions--;
 				transform.position = getJump();
-			}
-		}
-
-		if (Hm.move)
-		{
-			if (action == 1)
-			{
-				transform.Translate(0, 0, 0);
-			}
-			if (action == 2)
-			{
-				grounded = false;
-				transform.Translate(0, .15f, 0);
 			}
 		}
 
@@ -170,6 +160,13 @@ public class CombinedMove : MonoBehaviour {
 			moveDirection = 0;
 		}
 
+		//stops Heavy attack from bounceing
+		if((transform.position.y - prevYPos.y) < 0 && grounded)
+		{
+			animator.SetInteger("action", 0);
+			Hm.move = false;
+		}
+
 		//activate gravity if airborn
 		if (!grounded && transform.position.y > -.8f)
 		{
@@ -178,14 +175,13 @@ public class CombinedMove : MonoBehaviour {
 			grounded = true;
 			transform.position = new Vector2(transform.position.x, -.8f);
 			jumpHeight = setJumpHeight;
-			airOptions = setAirOptions;
+			airOptions = setAirOptions;	
 		}
 	}
 
 	//jump method, calls gravity
 	public Vector2 getJump()
-	{
-		animator.SetInteger("moveDirection", 2);
+	{	
 		jumpHeight = setJumpHeight;
 		grounded = false;
 		transform.position = getGravity(grounded);
