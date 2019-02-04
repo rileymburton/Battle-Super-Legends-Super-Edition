@@ -349,6 +349,7 @@ public class MapGenerator : MonoBehaviour {
 			bool canGoRight = true;
 			bool canGoDown = true;
 			bool canGoLeft = true;
+			bool noPossibleDirections;
 			
 			int numberOfBranchingRooms = Random.Range(20, 30);
 			List<int> BranchingRoomsDirection = new List<int>();
@@ -359,82 +360,26 @@ public class MapGenerator : MonoBehaviour {
 				canGoRight = true;
 				canGoDown = true;
 			    canGoLeft = true;
+				
 				for(int x = 0; x< xPosition.Count; x++){
 				
-				if(xPosition[x] == xCoordinate && yPosition[x] == yCoordinate + 10){
-					canGoUp = false;
-				}
-				if(xPosition[x] == xCoordinate + 10 && yPosition[x] == yCoordinate){
-					canGoRight = false;
-				}
-				if(xPosition[x] == xCoordinate && yPosition[x] == yCoordinate - 10){
-					canGoDown = false;
-				}
-				if(xPosition[x] == xCoordinate - 10 && yPosition[x] == yCoordinate){
-					canGoLeft = false;
-				}
-			}
-			if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
-				Debug.Log(prevDirection + " Previous Direction");
-				Debug.Log(roomExitType[roomExitType.Count-1] + " Room Replaced");
-				if(prevDirection == 0){
-					if(roomExitType[roomExitType.Count-1] == "A"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XBottomExit");
+					if(xPosition[x] == xCoordinate && yPosition[x] == yCoordinate + 10){
+						canGoUp = false;
 					}
-					else if(roomExitType[roomExitType.Count-1] == "D"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XLeftExit");
+					if(xPosition[x] == xCoordinate + 10 && yPosition[x] == yCoordinate){
+						canGoRight = false;
 					}
-					else if(roomExitType[roomExitType.Count-1] == "E"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XRightExit");
+					if(xPosition[x] == xCoordinate && yPosition[x] == yCoordinate - 10){
+						canGoDown = false;
+					}
+					if(xPosition[x] == xCoordinate - 10 && yPosition[x] == yCoordinate){
+						canGoLeft = false;
 					}
 				}
-				else if(prevDirection == 1){
-					if(roomExitType[roomExitType.Count-1] == "C"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XLeftExit");
+					if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
+						numberOfBranchingRooms = i;
+						continue;
 					}
-					else if(roomExitType[roomExitType.Count-1] == "E"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XTopExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "F"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XBottomExit");
-					}
-				}
-				else if(prevDirection == 2){
-					if(roomExitType[roomExitType.Count-1] == "A"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XTopExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "B"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XLeftExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "F"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XRightExit");
-					}
-				}
-				else if(prevDirection == 3){
-					if(roomExitType[roomExitType.Count-1] == "B"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XBottomExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "C"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XRightExit");
-					}
-					else if(roomExitType[roomExitType.Count-1] == "D"){
-						roomExitType.RemoveAt(roomExitType.Count-1);
-						roomExitType.Add("XTopExit");
-					}
-				}
-				continue;
-			}
 			
 			while(true){
 				randomDirection = Random.Range(0,4);
@@ -472,9 +417,23 @@ public class MapGenerator : MonoBehaviour {
 						break;
 					}
 				}
+		 }
+		for(int k = 0; k < numberOfBranchingRooms; k++){
+			if(k == numberOfBranchingRooms-1){
+				if(BranchingRoomsDirection[k] == 0){
+					roomExitType.Add("XBottomExit");
+				}
+				else if (BranchingRoomsDirection[k] == 1){
+					roomExitType.Add("XLeftExit");
+				}
+				else if (BranchingRoomsDirection[k] == 2){
+					roomExitType.Add("XTopExit");
+				}
+				else if (BranchingRoomsDirection[k] == 3){
+					roomExitType.Add("XRightExit");
+				}
 			}
-		for(int k = 0; k < BranchingRoomsDirection.Count-1; k++){
-			if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
+			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
 				
 				roomExitType.Add("A");
 				
