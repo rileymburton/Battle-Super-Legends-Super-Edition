@@ -74,16 +74,12 @@ public class MapGenerator : MonoBehaviour {
 			}
 			previousRoomDirection = nextRoomDirection;
 			spawnDirections.Add(nextRoomDirection);
-			
-
 		}
-
 	}
 
 	private void AssignRoomCode() {
 		roomExitType.Add("Z");
 		for (int i = 1; i < numberOfRooms-1; i++){
-
 			if(spawnDirections[i+1] == 0 && spawnDirections[i] == 0){
 				roomExitType.Add("A");
 			}
@@ -111,23 +107,13 @@ public class MapGenerator : MonoBehaviour {
 				roomExitType.Add("F");
 			}	
 		}
-		
 		roomExitType.Add("Y");
-		foreach(string x in roomExitType){
-			//Debug.Log(x);
-		}
 	}
-
 	private void PlaceRooms(){
 		int xDisplacement = 0;
 		int yDisplacement = 0;
-
-
 			for(int i=0; i < numberOfRooms; i++){
-				
-
 				if(roomExitType[i] == "A"){
-				//Instantiate(roomA, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 				xPosition.Add(xDisplacement);
 				yPosition.Add(yDisplacement);
 					if(spawnDirections[i] == 0){
@@ -137,66 +123,53 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "B"){
-					//Instantiate(roomB, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);
 					xDisplacement += 10;
 				}
 				else if(roomExitType[i] == "C"){
-					//Instantiate(roomC, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);					
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "D"){
-					//Instantiate(roomD, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "E"){
-					//Instantiate(roomE, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement -= 10;
 				}
 				else if (roomExitType[i] == "F"){
-					//Instantiate(roomF, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement+= 10;
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
-					//Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 1){
-					//Instantiate(roomLeftExitY, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 2){
-					//Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 				}
-
-				
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 1){
-					//Instantiate(roomRightExitZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					xDisplacement += 10;
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 0){
-					//Instantiate(roomTopExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement += 10;
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 2){
-					//Instantiate(roomBottomExitYZ, new Vector2(xDisplacement, yDisplacement), Quaternion.identity);
 					xPosition.Add(xDisplacement);
 					yPosition.Add(yDisplacement);	
 					yDisplacement -= 10;
@@ -215,8 +188,6 @@ public class MapGenerator : MonoBehaviour {
 			bool canGoLeft = true;
 			int currentXPosition = xPosition[i];
 			int currentYPosition = yPosition[i];
-			//Debug.Log(i);
-			//Debug.Log(currentXPosition + " " + currentYPosition);
 			for(int j = 0; j < xPosition.Count; j++){
 				if(xPosition[j] == currentXPosition && yPosition[j] == currentYPosition + 10){
 					canGoUp = false;
@@ -254,11 +225,8 @@ public class MapGenerator : MonoBehaviour {
 						break;
 					}
 				}
-			
 				if(randomDirection == 0 && canGoUp) {
-					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition + 10), Quaternion.identity);
 					currentYPosition += 10;
-					//roomExitType.Add("A");
 					BranchingRooms(currentXPosition, currentYPosition, 0);		
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
@@ -276,10 +244,8 @@ public class MapGenerator : MonoBehaviour {
 						Debug.Log("Replaced E with G");
 					}		
 				}
-				else if(randomDirection == 2 && canGoDown) {
-					//Instantiate(roomA, new Vector2(currentXPosition, currentYPosition - 10), Quaternion.identity);	
+				else if(randomDirection == 2 && canGoDown) {	
 					currentYPosition -= 10;
-					//roomExitType.Add("A");
 					BranchingRooms(currentXPosition, currentYPosition, 2);
 					if(roomExitType[i] == "C"){
 						roomExitType.RemoveAt(i);
@@ -298,9 +264,7 @@ public class MapGenerator : MonoBehaviour {
 					}				
 				}
 				else if(randomDirection == 1 && canGoRight) {
-					//Instantiate(roomC, new Vector2(currentXPosition + 10, currentYPosition), Quaternion.identity);
 					currentXPosition += 10;
-				//	roomExitType.Add("C");
 					BranchingRooms(currentXPosition, currentYPosition, 1);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
@@ -319,10 +283,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(randomDirection == 3 && canGoLeft) {
-					//Instantiate(roomC, new Vector2(currentXPosition - 10, currentYPosition), Quaternion.identity);
-					
 					currentXPosition -= 10;
-				//	roomExitType.Add("C");
 					BranchingRooms(currentXPosition, currentYPosition, 3);
 					if(roomExitType[i] == "A"){
 						roomExitType.RemoveAt(i);
@@ -342,15 +303,11 @@ public class MapGenerator : MonoBehaviour {
 				}    
 			}
 		}
-	
  		private void BranchingRooms(int xCoordinate, int yCoordinate, int prevDirection){
-			//Debug.Log(xCoordinate + " " + yCoordinate);
 			bool canGoUp = true;
 			bool canGoRight = true;
 			bool canGoDown = true;
 			bool canGoLeft = true;
-			bool noPossibleDirections;
-			
 			int numberOfBranchingRooms = Random.Range(20, 30);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
@@ -360,7 +317,6 @@ public class MapGenerator : MonoBehaviour {
 				canGoRight = true;
 				canGoDown = true;
 			    canGoLeft = true;
-				
 				for(int x = 0; x< xPosition.Count; x++){
 				
 					if(xPosition[x] == xCoordinate && yPosition[x] == yCoordinate + 10){
@@ -376,47 +332,46 @@ public class MapGenerator : MonoBehaviour {
 						canGoLeft = false;
 					}
 				}
-					if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
-						numberOfBranchingRooms = i;
-						continue;
-					}
+				if(!canGoDown && !canGoUp && !canGoLeft && !canGoRight){
+					numberOfBranchingRooms = i;
+					continue;
+				}
 			
 			while(true){
 				randomDirection = Random.Range(0,4);
-
-					if(randomDirection == 0 && prevDirection != 2 && canGoUp){
-						BranchingRoomsDirection.Add(randomDirection);
-						prevDirection = randomDirection;
-						xPosition.Add(xCoordinate);
-						yPosition.Add(yCoordinate);
-						yCoordinate +=10;
-						break;
-					}
-					else if(randomDirection == 1 && prevDirection != 3 && canGoRight){
-						BranchingRoomsDirection.Add(randomDirection);
-						prevDirection = randomDirection;
-						xPosition.Add(xCoordinate);
-						yPosition.Add(yCoordinate);
-						xCoordinate +=10;
-						break;
-					}
-					else if(randomDirection == 2 && prevDirection != 0 && canGoDown){
-						BranchingRoomsDirection.Add(randomDirection);
-						prevDirection = randomDirection;
-						xPosition.Add(xCoordinate);
-						yPosition.Add(yCoordinate);
-						yCoordinate -=10;
-						break;
-					}
-					else if(randomDirection == 3 && prevDirection != 1 && canGoLeft){
-						BranchingRoomsDirection.Add(randomDirection);
-						prevDirection = randomDirection;
-						xPosition.Add(xCoordinate);
-						yPosition.Add(yCoordinate);
-						xCoordinate -=10;
-						break;
-					}
+				if(randomDirection == 0 && prevDirection != 2 && canGoUp){
+					BranchingRoomsDirection.Add(randomDirection);
+					prevDirection = randomDirection;
+					xPosition.Add(xCoordinate);
+					yPosition.Add(yCoordinate);
+					yCoordinate +=10;
+					break;
 				}
+				else if(randomDirection == 1 && prevDirection != 3 && canGoRight){
+					BranchingRoomsDirection.Add(randomDirection);
+					prevDirection = randomDirection;
+					xPosition.Add(xCoordinate);
+					yPosition.Add(yCoordinate);
+					xCoordinate +=10;
+					break;
+				}
+				else if(randomDirection == 2 && prevDirection != 0 && canGoDown){
+					BranchingRoomsDirection.Add(randomDirection);
+					prevDirection = randomDirection;
+					xPosition.Add(xCoordinate);
+					yPosition.Add(yCoordinate);
+					yCoordinate -=10;
+					break;
+				}
+				else if(randomDirection == 3 && prevDirection != 1 && canGoLeft){
+					BranchingRoomsDirection.Add(randomDirection);
+					prevDirection = randomDirection;
+					xPosition.Add(xCoordinate);
+					yPosition.Add(yCoordinate);
+					xCoordinate -=10;
+					break;
+				}
+			}
 		 }
 		for(int k = 0; k < numberOfBranchingRooms; k++){
 			if(k == numberOfBranchingRooms-1){
@@ -434,96 +389,54 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 0){
-				
 				roomExitType.Add("A");
-				
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 2){
-				
 				roomExitType.Add("A");
-				
-				
-
 			}
 
 			else if (BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 2) {
-				
 				roomExitType.Add("B");
-			
-				
 			}
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 3){
-				
 				roomExitType.Add("B");
-				
-				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 1){
-				
 				roomExitType.Add("C");
-				
-			
 			}
 
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 3){
-				
 				roomExitType.Add("C");
-			
-				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 1 && BranchingRoomsDirection[k] == 0){
-					
 				roomExitType.Add("D");
-				
-				
 			}
 			else if(BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 3){
-				
 				roomExitType.Add("D");
-				
-				
-				
 			}	
 	
 			else if (BranchingRoomsDirection[k+1] == 2 && BranchingRoomsDirection[k] == 1){
-				
 				roomExitType.Add("E");
-				
-				
 			}
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 0){
-				
 				roomExitType.Add("E");
-				
-				
 			}	
 
 			else if(BranchingRoomsDirection[k+1] == 0 && BranchingRoomsDirection[k] == 1){
-				
 				roomExitType.Add("F");
-				
-				
-				
 			}	
 			else if(BranchingRoomsDirection[k+1] == 3 && BranchingRoomsDirection[k] == 2){
-				
 				roomExitType.Add("F");
-				
-				
-				
 			}	
-			
 		}
 	}
-	
 		private void InstantiateRooms(){
 			for(int  i = 0; i< roomExitType.Count; i++){
 				int randomChoice;
-				//Debug.Log(roomExitType[i]);
 				if(roomExitType[i] == "A"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -535,7 +448,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "B"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -545,10 +458,9 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomChoice == 2){
 						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
-					
 				}
 				else if(roomExitType[i] == "C"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -560,7 +472,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "D"){
-					randomChoice = Random.Range(0,2);
+				    randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -570,7 +482,6 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomChoice == 2){
 						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
-					
 				}
 				else if(roomExitType[i] == "E"){
 					randomChoice = Random.Range(0,2);
@@ -583,10 +494,9 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomChoice == 2){
 						Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
-					
 				}
 				else if(roomExitType[i] == "F"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -598,7 +508,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "G"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -608,6 +518,7 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomChoice == 2){
 						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
+				}
 				else if(roomExitType[i] == "H"){
 					randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
@@ -621,7 +532,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "I"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -633,7 +544,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "J"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -644,9 +555,8 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
-
 				else if(roomExitType[i] == "XTopExit"){
-					randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -656,10 +566,9 @@ public class MapGenerator : MonoBehaviour {
 					else if(randomChoice == 2){
 						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
-					
 				}
 				else if(roomExitType[i] == "XBottomExit"){
-						randomChoice = Random.Range(0,2);
+				 		randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -671,7 +580,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "XRightExit"){
-						randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -683,7 +592,7 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "XLeftExit"){
-						randomChoice = Random.Range(0,2);
+				 	randomChoice = Random.Range(0,2);
 					if(randomChoice == 0){
 						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -694,11 +603,8 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
-
-
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-					
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 1){
 					Instantiate(roomLeftExitY, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
@@ -706,7 +612,6 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 2){
 					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				
 				}
 
 				
@@ -716,12 +621,11 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 0){
 					Instantiate(roomTopExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-					
 				}
 				else if (roomExitType[i] == "Z" && spawnDirections[i+1] == 2){
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
-				
 				}
 			}
 		}
+}
 	
