@@ -7,6 +7,10 @@ public class CombinedMove : MonoBehaviour {
 	public HitboxManager Hm;
 	public KeybindingsScript Kb;
 	private int   dashSpeedInputDuration = 40;
+	public BoxCollider2D hurtbox1;
+	public BoxCollider2D hurtbox2;
+	public BoxCollider2D fireball;
+	public float fireballSpeed = 1f;
 
 	//used by animator
 	Animator       animator;
@@ -28,6 +32,8 @@ public class CombinedMove : MonoBehaviour {
 	float walkspeed;
 	float setJumpHeight;
 	float speedMultiplier;
+	float lastTapTime;
+	float tapSpeed;
 
 	//used for combat
 	public int playerHealth;
@@ -47,10 +53,12 @@ public class CombinedMove : MonoBehaviour {
 		walkspeed     = .06f;      //changeable
 		dashSpeed     = 1.75f;     //changeable
 		gravity       = .013f;     //changeable
+		tapSpeed      = .5f;       //changeable
 		jumpHeight    = setJumpHeight;
 		airOptions    = setAirOptions;
 		grounded      = true;
 		facingRight   = true;
+		lastTapTime   = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -87,30 +95,44 @@ public class CombinedMove : MonoBehaviour {
 			}
 			transform.position = getJump();
 		}
+		//special attack
+		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate S
+		{
+			action = 3;
+		}
 
 		//move left
 		if (Input.GetKey(KeybindingsScript.Kb.left) &&
 			!Input.GetKey(KeybindingsScript.Kb.right))
 		{
 			moveDirection = -1;
-			if (buttonHeld >= dashSpeedInputDuration)
+			if((Time.time - lastTapTime) < tapSpeed)
 			{
-				speedMultiplier = dashSpeed*-1;
-			} else if (buttonHeld < dashSpeedInputDuration) {
-				speedMultiplier = -1;
+				Debug.Log("Rolling Left");
+				getRoll(facingRight, grounded);
 			}
-			if (grounded)
+			else
 			{
-				action = 0;
-				facingRight = false;
-				transform.Translate(walkspeed*speedMultiplier, 0, 0);
+				if (buttonHeld >= dashSpeedInputDuration)
+				{
+					speedMultiplier = dashSpeed*-1;
+				} else if (buttonHeld < dashSpeedInputDuration) {
+					speedMultiplier = -1;
+				}
+				if (grounded)
+				{
+					action = 0;
+					facingRight = false;
+					transform.Translate(walkspeed*speedMultiplier, 0, 0);
+				}
+				else if (!grounded)
+				{
+					transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
+				}
+				Debug.Log("Moving Left");
+				buttonHeld++;
 			}
-			else if (!grounded)
-			{
-				transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
-			}
-			buttonHeld++;
-			Debug.Log("Moving Left");
+			lastTapTime = Time.time;
 		}
 
 		//move right
@@ -199,5 +221,27 @@ public class CombinedMove : MonoBehaviour {
 			jumpHeight -= gravity;
 		}
 		return transform.position;
+	}
+	
+	public void getRoll(bool facingRight, bool grounded)
+	{
+		if (grounded)
+		{
+			for(int i = 30; i > 0; i--)
+			{
+				//hitbox1.enabled = false;
+				//hitbox2.enabled = false;
+				if (facingRight)
+				{
+					transform.Translate(1, 0, 0);
+				}
+				if (!facingRight)
+				{
+					transform.Translate(-1, 0, 0);
+				}
+			}
+			//hitbox1.enabled = true;
+			//hitbox2.enabled = true;
+		}
 	}
 }
