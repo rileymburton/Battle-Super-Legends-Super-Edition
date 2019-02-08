@@ -8,9 +8,7 @@ public class CombinedMove : MonoBehaviour {
 	public KeybindingsScript Kb;
 	private int   dashSpeedInputDuration = 40;
 	public BoxCollider2D hurtbox1;
-	public BoxCollider2D hurtbox2;
-	public BoxCollider2D fireball;
-	public float fireballSpeed = 1f;
+	public CircleCollider2D hurtbox2;
 
 	//used by animator
 	Animator       animator;
@@ -99,6 +97,7 @@ public class CombinedMove : MonoBehaviour {
 		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate S
 		{
 			action = 3;
+			getRoll(facingRight, grounded);
 		}
 
 		//move left
@@ -106,33 +105,24 @@ public class CombinedMove : MonoBehaviour {
 			!Input.GetKey(KeybindingsScript.Kb.right))
 		{
 			moveDirection = -1;
-			if((Time.time - lastTapTime) < tapSpeed)
+			if (buttonHeld >= dashSpeedInputDuration)
 			{
-				Debug.Log("Rolling Left");
-				getRoll(facingRight, grounded);
+				speedMultiplier = dashSpeed*-1;
+			} else if (buttonHeld < dashSpeedInputDuration) {
+				speedMultiplier = -1;
 			}
-			else
+			if (grounded)
 			{
-				if (buttonHeld >= dashSpeedInputDuration)
-				{
-					speedMultiplier = dashSpeed*-1;
-				} else if (buttonHeld < dashSpeedInputDuration) {
-					speedMultiplier = -1;
-				}
-				if (grounded)
-				{
-					action = 0;
-					facingRight = false;
-					transform.Translate(walkspeed*speedMultiplier, 0, 0);
-				}
-				else if (!grounded)
-				{
-					transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
-				}
-				Debug.Log("Moving Left");
-				buttonHeld++;
+				action = 0;
+				facingRight = false;
+				transform.Translate(walkspeed*speedMultiplier, 0, 0);
 			}
-			lastTapTime = Time.time;
+			else if (!grounded)
+			{
+				transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
+			}
+			Debug.Log("Moving Left");
+			buttonHeld++;
 		}
 
 		//move right
