@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035f2ac9a0b707744b94dd677bea00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomA: {fileID: 1415610887169994, guid: 0702ed04d4fcca746ae3d65a83b3b457, type: 3}
-  roomA1: {fileID: 0}
+  roomA: {fileID: 3194844136754859829, guid: 581d059b6c78d2d44a8f1aa1da4a5f8d, type: 3}
+  roomA1: {fileID: 9070908215437234260, guid: 744d896abc86fd84eb824cea5716dc3d, type: 3}
   roomA2: {fileID: 0}
   roomB: {fileID: 1851178761541006, guid: c0480598e5c24ef4a97721b188fa8ea9, type: 3}
   roomB1: {fileID: 0}
