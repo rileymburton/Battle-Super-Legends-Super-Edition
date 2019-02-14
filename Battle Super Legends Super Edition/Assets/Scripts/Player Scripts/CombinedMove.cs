@@ -18,6 +18,7 @@ public class CombinedMove : MonoBehaviour {
 	int            moveDirection;
 	int            direction;
 	bool           grounded;
+	bool 		   wasGrounded;
 	Vector2        prevYPos;
 
 	//used by movement
@@ -62,6 +63,7 @@ public class CombinedMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//update animator
+		Debug.Log("Yo ITS:" + action);
 		animator.SetInteger("action", action);
 		animator.SetInteger("moveDirection", moveDirection);
 		animator.SetBool("grounded", grounded);
@@ -69,8 +71,9 @@ public class CombinedMove : MonoBehaviour {
 		if (facingRight){spriteRenderer.flipX = false;}
 		if (!facingRight){spriteRenderer.flipX = true;}
 		//collect vertical speed
-		animator.SetFloat("vspeed", 
-			(transform.position.y - prevYPos.y) / Time.deltaTime);
+		if (action != 2)
+			animator.SetFloat("vspeed", 
+				(transform.position.y - prevYPos.y) / Time.deltaTime);
 		prevYPos = transform.position;
 
 		//light attack
@@ -94,7 +97,7 @@ public class CombinedMove : MonoBehaviour {
 			transform.position = getJump();
 		}
 		//special attack
-		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate S
+		if (Input.GetKeyDown(KeybindingsScript.Kb.heavyAttack))//activate S
 		{
 			action = 3;
 			getRoll(facingRight, grounded);
@@ -153,8 +156,6 @@ public class CombinedMove : MonoBehaviour {
 		//jump
 		if (Input.GetKeyDown(KeybindingsScript.Kb.jump))
 		{
-			animator.SetInteger("moveDirection", 2);
-			action = 0;
 			if (grounded)
 				transform.position = getJump();
 			else if (airOptions > 0)
@@ -172,13 +173,6 @@ public class CombinedMove : MonoBehaviour {
 			moveDirection = 0;
 		}
 
-		//stops Heavy attack from bounceing
-		if((transform.position.y - prevYPos.y) < 0 && grounded)
-		{
-			animator.SetInteger("action", 0);
-			Hm.move = false;
-		}
-
 		//activate gravity if airborn
 		if (!grounded && transform.position.y > -.8f)
 		{
@@ -189,6 +183,13 @@ public class CombinedMove : MonoBehaviour {
 			jumpHeight = setJumpHeight;
 			airOptions = setAirOptions;	
 		}
+
+
+
+		if(grounded && !wasGrounded)
+			action = 0;
+
+		wasGrounded = grounded;
 	}
 
 	//jump method, calls gravity
