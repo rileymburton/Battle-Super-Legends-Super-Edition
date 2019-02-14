@@ -143,22 +143,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomA: {fileID: 3194844136754859829, guid: 581d059b6c78d2d44a8f1aa1da4a5f8d, type: 3}
   roomA1: {fileID: 9070908215437234260, guid: 744d896abc86fd84eb824cea5716dc3d, type: 3}
-  roomA2: {fileID: 0}
-  roomB: {fileID: 1851178761541006, guid: c0480598e5c24ef4a97721b188fa8ea9, type: 3}
-  roomB1: {fileID: 0}
-  roomB2: {fileID: 0}
-  roomC: {fileID: 1829026701295364, guid: 2b50ad8cc95f0b64fa05fe27091d46cd, type: 3}
-  roomC1: {fileID: 0}
-  roomC2: {fileID: 0}
-  roomD: {fileID: 1840190992579662, guid: 16f4d308db289bc43bee6db79b8326a2, type: 3}
-  roomD1: {fileID: 0}
-  roomD2: {fileID: 0}
-  roomE: {fileID: 1197278960333648, guid: e3ff434527f59894fb2f664bcafb619e, type: 3}
-  roomE1: {fileID: 0}
-  roomE2: {fileID: 0}
-  roomF: {fileID: 1844601767521576, guid: 1b35aeb027623c442b8c39a1363a98b2, type: 3}
-  roomF1: {fileID: 0}
-  roomF2: {fileID: 0}
+  roomA2: {fileID: 2118776652855946517, guid: cf48ec4e5bd02584f8dd22fa81405bfc, type: 3}
+  roomB: {fileID: 3928486536587439963, guid: 7eff46ab5750d1b46980cf5327b2d21c, type: 3}
+  roomB1: {fileID: 3059922219509507119, guid: 27857532fab47564c8db5c589e5b998e, type: 3}
+  roomB2: {fileID: 7293519514350955786, guid: 67c530aeaba50e44aa551106b493d0a2, type: 3}
+  roomC: {fileID: 1214659179553934868, guid: 8fa59b4fc323417409b8d04d2c1d00fb, type: 3}
+  roomC1: {fileID: 7296228114972080181, guid: db1fa8894396a4544b1fff9a3fa0fef7, type: 3}
+  roomC2: {fileID: 8617304071585493173, guid: 4d00e61e09d71d2448a03d3327fa324f, type: 3}
+  roomD: {fileID: 200437754739806034, guid: e98860095e56d5b49b848d80ebd00068, type: 3}
+  roomD1: {fileID: 8597030427605101671, guid: aea497395026fae40bce1bec04341e72, type: 3}
+  roomD2: {fileID: 8133624537654034432, guid: ef504157579fb5d4f9edb5d6575d6648, type: 3}
+  roomE: {fileID: 7306745163016246558, guid: 40885e5bd0b8921469800feb1ad36e92, type: 3}
+  roomE1: {fileID: 4655850602538304111, guid: b4a7770bbd2c253458f0fe69cdc15c6b, type: 3}
+  roomE2: {fileID: 5202790785750232887, guid: 255393a5b769d194a8d23158d8e74787, type: 3}
+  roomF: {fileID: 1221054230337063654, guid: 8349982a49e57e64586d6d5781c61a4b, type: 3}
+  roomF1: {fileID: 1677593589940036132, guid: 61b9679dffd0a864ab3e957956bc86ff, type: 3}
+  roomF2: {fileID: 2709441437979267265, guid: 8b626295820d2a74ab112800ec496e90, type: 3}
   roomG: {fileID: 4431343303400493755, guid: 09a19e02df9a40947ac589488e6d38b0, type: 3}
   roomG1: {fileID: 8166480475791995568, guid: 9054efc47d73cf5489a0ded221d61e6c, type: 3}
   roomG2: {fileID: 4013425235349630940, guid: faa2e1db3c0789c4fba336e6981ef1a5, type: 3}
