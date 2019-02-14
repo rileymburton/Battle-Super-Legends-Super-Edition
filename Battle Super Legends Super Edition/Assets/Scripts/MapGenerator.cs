@@ -592,10 +592,10 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 1){
-						Instantiate(roomXTop1, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 2){
-						Instantiate(roomXTop2, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
 				else if(roomExitType[i] == "XBottomExit"){
@@ -604,10 +604,10 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 1){
-						Instantiate(roomXBottom1, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 2){
-						Instantiate(roomXBottom2, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
 				else if(roomExitType[i] == "XRightExit"){
@@ -616,10 +616,10 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 1){
-						Instantiate(roomXRight1, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 2){
-						Instantiate(roomXRight2, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
 				else if(roomExitType[i] == "XLeftExit"){
@@ -628,10 +628,10 @@ public class MapGenerator : MonoBehaviour {
 						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 1){
-						Instantiate(roomXLeft1, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 					else if(randomChoice == 2){
-						Instantiate(roomXLeft2, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
+						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
 				}
 				else if (roomExitType[i] == "Y" && spawnDirections[i] == 0){
