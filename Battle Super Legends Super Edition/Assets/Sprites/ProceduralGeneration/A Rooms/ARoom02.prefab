@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2582528378631633329}
   - component: {fileID: 5264319250040416946}
+  - component: {fileID: 8617035726944953438}
+  - component: {fileID: 3156625799040985677}
   m_Layer: 0
   m_Name: ARoom02
   m_TagString: Untagged
@@ -79,3 +81,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &8617035726944953438
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.371135, y: 1.8671227}
+  - {x: -4.373619, y: 2.4985678}
+  - {x: -1.8718022, y: 2.499905}
+  - {x: -1.8749942, y: 1.8749479}
+  - {x: -0.625167, y: 1.8776691}
+  - {x: -0.62459576, y: 1.2538576}
+  - {x: -0.000112213194, y: 1.2499124}
+  - {x: -0.0005483581, y: 0.6243153}
+  - {x: 1.2493885, y: 0.62609696}
+  - {x: 1.250789, y: 0.0049108043}
+  - {x: -0.62436277, y: 0.0003554374}
+  - {x: -0.62447536, y: 0.12134659}
+  - {x: -0.6270756, y: 0.6244141}
+  - {x: -1.2487863, y: 0.62575245}
+  - {x: -1.2473193, y: 1.2511709}
+  - {x: -1.8756424, y: 1.2512074}
+  - {x: -1.8747795, y: -0.000011893921}
+  - {x: -3.124953, y: 0.0008088574}
+  - {x: -3.1283066, y: 0.6231718}
+  - {x: -2.5061288, y: 0.6292939}
+  - {x: -2.499143, y: 1.8763611}
+  - {x: -4.375646, y: 1.8766638}
+--- !u!68 &3156625799040985677
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.9858537, y: 4.993723}
+  - {x: -4.999091, y: 4.999296}
+  - {x: -4.376372, y: 4.9999933}
+  - {x: -4.372548, y: -4.9983187}
+  - {x: -4.997902, y: -4.9980774}
+  - {x: -5.001593, y: 4.995604}
