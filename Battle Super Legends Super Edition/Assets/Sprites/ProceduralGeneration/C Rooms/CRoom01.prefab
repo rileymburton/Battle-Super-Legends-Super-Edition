@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 8938975135768039962}
   - component: {fileID: 1851790883129455464}
   - component: {fileID: 7079855767692125525}
+  - component: {fileID: 4627720866450832334}
+  - component: {fileID: 2476370726653774721}
+  - component: {fileID: 8688034790360527820}
+  - component: {fileID: 3885587046030491495}
   m_Layer: 0
   m_Name: CRoom01
   m_TagString: Untagged
@@ -171,3 +175,103 @@ EdgeCollider2D:
   - {x: 1.8749871, y: 3.1249828}
   - {x: 0.62501144, y: 3.1249344}
   - {x: 0.6249839, y: 4.3732944}
+--- !u!68 &4627720866450832334
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214659179553934868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 4.9999924, y: 2.4999983}
+  - {x: 3.749965, y: 2.4999518}
+  - {x: 3.750038, y: 3.1249838}
+  - {x: 4.374846, y: 3.1251113}
+  - {x: 4.3749323, y: 4.374873}
+  - {x: 4.9999504, y: 4.3735104}
+  - {x: 4.999997, y: 2.4999936}
+--- !u!61 &2476370726653774721
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214659179553934868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.3749056, y: -1.5626111}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.249799, y: 0.6251857}
+  m_EdgeRadius: 0
+--- !u!61 &8688034790360527820
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214659179553934868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -4.68755}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.62506104}
+  m_EdgeRadius: 0
+--- !u!68 &3885587046030491495
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214659179553934868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.37492, y: -3.7499022}
+  - {x: -4.3747764, y: -4.37506}
+  - {x: -3.122141, y: -4.375953}
+  - {x: -3.1249945, y: -3.7499583}
+  - {x: -1.2497834, y: -3.7499833}
+  - {x: -1.2499772, y: -3.1249516}
+  - {x: -3.7502444, y: -3.1249428}
+  - {x: -3.750112, y: -3.7499263}
+  - {x: -4.374913, y: -3.7499917}
