@@ -10,27 +10,27 @@ public class HealthDisplay : MonoBehaviour
     public GameObject slot2;
     public GameObject slot3;
     public GameObject slot4;
-    private GameObject[] inventorySlots;
+    public GameObject[] inventorySlots;
     
     //storage ints
     public int[] inventory = new int[4];
-    public int coin;
-    public int metal;
-    public int leather;
-    public int wood;
-    public int ether;
+    private int coin;
+    private int metal;
+    private int leather;
+    private int wood;
+    private int ether;
 
     //used for display
     //inventory
     private SpriteRenderer spriteR;
     private Sprite[] sprites;
-    private Slider healthBar;
-    private Text healthDisplay;
-    private Text coinDisplay;
-    private Text metalDisplay;
-    private Text leatherDisplay;
-    private Text woodDisplay;
-    private Text etherDisplay;
+    public Slider healthBar;
+    public Text healthDisplay;
+    public Text coinDisplay;
+    public Text metalDisplay;
+    public Text leatherDisplay;
+    public Text woodDisplay;
+    public Text etherDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,7 @@ public class HealthDisplay : MonoBehaviour
         {
             switch (inventory[i]){
                 case 0:
-                    inventorySlots[i].spriteR.sprite = ;
+                    //inventorySlots[i].spriteR.sprite = ;
                 break;
 
                 case 1:
