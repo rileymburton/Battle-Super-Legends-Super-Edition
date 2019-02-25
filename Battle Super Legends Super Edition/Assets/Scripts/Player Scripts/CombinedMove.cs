@@ -6,6 +6,7 @@ public class CombinedMove : MonoBehaviour {
 
 	public HitboxManager Hm;
 	public KeybindingsScript Kb;
+	public HealthDisplay Hd;
 	private int   dashSpeedInputDuration = 40;
 	public BoxCollider2D hurtbox1;
 	public CircleCollider2D hurtbox2;
@@ -63,7 +64,6 @@ public class CombinedMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//update animator
-		Debug.Log("Yo ITS:" + action);
 		animator.SetInteger("action", action);
 		animator.SetInteger("moveDirection", moveDirection);
 		animator.SetBool("grounded", grounded);
@@ -89,14 +89,15 @@ public class CombinedMove : MonoBehaviour {
 		//heavy attack
 		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate H
 		{
-			action = 2;
-			if (!grounded)
-			{
-				airOptions--;
-			}
-			transform.position = getJump();
+			//getInventoryItem();
+				action = 2;
+				if (!grounded)
+				{
+					airOptions--;
+				}
+				transform.position = getJump();
 		}
-		//special attack
+		//roll
 		if (Input.GetKeyDown(KeybindingsScript.Kb.heavyAttack))//activate S
 		{
 			action = 3;
@@ -218,21 +219,72 @@ public class CombinedMove : MonoBehaviour {
 	{
 		if (grounded)
 		{
+			action = 3;
 			for(int i = 30; i > 0; i--)
 			{
-				//hitbox1.enabled = false;
-				//hitbox2.enabled = false;
+				hurtbox1.enabled = false;
+				hurtbox2.enabled = false;
 				if (facingRight)
 				{
-					transform.Translate(1, 0, 0);
+					transform.Translate(0.1f, 0, 0);
 				}
 				if (!facingRight)
 				{
-					transform.Translate(-1, 0, 0);
+					transform.Translate(-0.1f, 0, 0);
 				}
 			}
-			//hitbox1.enabled = true;
-			//hitbox2.enabled = true;
+			hurtbox1.enabled = true;
+			hurtbox2.enabled = true;
 		}
 	}
+
+	/* 
+	public int getInventoryItem()
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			switch (Hd.inventory[i]){
+                case 0:
+                    return 0;
+                break;
+
+                case 1:
+                    
+                break;
+
+                case 2:
+                    
+                break;
+
+                case 3:
+                    
+                break;
+
+                case 4:
+                    
+                break;
+
+                case 5:
+                    
+                break;
+
+                case 6:
+                    
+                break;
+
+                case 7:
+                    
+                break;
+
+                case 8:
+                    
+                break;
+
+                case 9:
+                    
+                break;
+		}
+		return -1;
+	}
+	*/
 }

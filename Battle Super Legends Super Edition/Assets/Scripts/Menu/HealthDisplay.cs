@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    CombinedMove Cm = new CombinedMove();
+    public CombinedMove Cm = new CombinedMove();
     public GameObject slot1;
     public GameObject slot2;
     public GameObject slot3;
@@ -22,20 +22,24 @@ public class HealthDisplay : MonoBehaviour
 
     //used for display
     //inventory
-    public Slider healthBar;
-    public Text healthDisplay;
-    public Text coinDisplay;
-    public Text metalDisplay;
-    public Text leatherDisplay;
-    public Text woodDisplay;
-    public Text etherDisplay;
+    private SpriteRenderer spriteR;
+    private Sprite[] sprites;
+    private Slider healthBar;
+    private Text healthDisplay;
+    private Text coinDisplay;
+    private Text metalDisplay;
+    private Text leatherDisplay;
+    private Text woodDisplay;
+    private Text etherDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
         inventorySlots = GameObject.FindGameObjectsWithTag("InventorySlots");
-        healthBar.maxValue = Cm.maxHealth;
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
+        sprites = Resources.LoadAll<Sprite>("inventory");
 
+        healthBar.maxValue = Cm.maxHealth;
         coin    = 300;
         metal   = 23;
         leather = 65;
@@ -59,7 +63,7 @@ public class HealthDisplay : MonoBehaviour
         {
             switch (inventory[i]){
                 case 0:
-                    //inventorySlots[i].image = thing
+                    inventorySlots[i].spriteR.sprite = ;
                 break;
 
                 case 1:
