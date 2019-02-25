@@ -5,23 +5,25 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    CombinedMove Cm = new CombinedMove();
+    public CombinedMove Cm = new CombinedMove();
     public GameObject slot1;
     public GameObject slot2;
     public GameObject slot3;
     public GameObject slot4;
-    private GameObject[] inventorySlots;
+    public GameObject[] inventorySlots;
     
     //storage ints
     public int[] inventory = new int[4];
-    public int coin;
-    public int metal;
-    public int leather;
-    public int wood;
-    public int ether;
+    private int coin;
+    private int metal;
+    private int leather;
+    private int wood;
+    private int ether;
 
     //used for display
     //inventory
+    private SpriteRenderer spriteR;
+    private Sprite[] sprites;
     public Slider healthBar;
     public Text healthDisplay;
     public Text coinDisplay;
@@ -34,8 +36,10 @@ public class HealthDisplay : MonoBehaviour
     void Start()
     {
         inventorySlots = GameObject.FindGameObjectsWithTag("InventorySlots");
-        healthBar.maxValue = Cm.maxHealth;
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
+        sprites = Resources.LoadAll<Sprite>("inventory");
 
+        healthBar.maxValue = Cm.maxHealth;
         coin    = 300;
         metal   = 23;
         leather = 65;
@@ -59,7 +63,7 @@ public class HealthDisplay : MonoBehaviour
         {
             switch (inventory[i]){
                 case 0:
-                    //inventorySlots[i].image = thing
+                    //inventorySlots[i].spriteR.sprite = ;
                 break;
 
                 case 1:
