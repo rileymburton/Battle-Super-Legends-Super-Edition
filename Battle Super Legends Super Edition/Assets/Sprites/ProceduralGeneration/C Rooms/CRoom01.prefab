@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2476370726653774721}
   - component: {fileID: 8688034790360527820}
   - component: {fileID: 3885587046030491495}
+  - component: {fileID: 1408236479078173237}
   m_Layer: 0
   m_Name: CRoom01
   m_TagString: Untagged
@@ -275,3 +276,31 @@ EdgeCollider2D:
   - {x: -3.7502444, y: -3.1249428}
   - {x: -3.750112, y: -3.7499263}
   - {x: -4.374913, y: -3.7499917}
+--- !u!68 &1408236479078173237
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214659179553934868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 3.1249933, y: -4.3750234}
+  - {x: 3.1251543, y: -3.7497916}
+  - {x: 2.4999835, y: -3.75002}
+  - {x: 2.4999645, y: -3.1251054}
+  - {x: -0.00035990775, y: -3.1254551}
+  - {x: 0.000009767711, y: -1.875028}
+  - {x: 0.6250498, y: -1.8750135}
+  - {x: 0.6251624, y: -2.4999619}
+  - {x: 3.124955, y: -2.4999669}
+  - {x: 3.1250534, y: -3.1250658}
+  - {x: 3.750019, y: -3.1250336}
+  - {x: 3.7499008, y: -4.375026}
