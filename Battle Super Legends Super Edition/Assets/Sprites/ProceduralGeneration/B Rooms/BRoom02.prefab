@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 979866154889032132}
   - component: {fileID: 3945431520577470542}
   - component: {fileID: 3645302225859782855}
+  - component: {fileID: 4214677888788046367}
   m_Layer: 0
   m_Name: BRoom02
   m_TagString: Untagged
@@ -188,7 +189,38 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 4.9998465, y: 3.1248705}
+  - {x: 4.9999824, y: 3.1250448}
   - {x: 5.0002327, y: 2.4998565}
   - {x: 3.1259732, y: 2.5059109}
-  - {x: 4.3778124, y: 3.739903}
+  - {x: 3.1248984, y: 3.125052}
+  - {x: 3.7498715, y: 3.1251984}
+  - {x: 3.7499447, y: 3.7500277}
+  - {x: 4.3748837, y: 3.7502782}
+  - {x: 4.374899, y: 3.124969}
+  - {x: 4.9999776, y: 3.125055}
+--- !u!61 &4214677888788046367
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3059922219509507119}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.6870184, y: 4.686905}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6259632, y: 0.6261902}
+  m_EdgeRadius: 0
