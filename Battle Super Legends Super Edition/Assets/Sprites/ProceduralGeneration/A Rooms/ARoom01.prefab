@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5524833689089160180}
   - component: {fileID: 2771186283460193184}
   - component: {fileID: 5497929708305166617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ARoom01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
