@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1367683743581508117}
   - component: {fileID: 1073814905769440476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BRoom03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
