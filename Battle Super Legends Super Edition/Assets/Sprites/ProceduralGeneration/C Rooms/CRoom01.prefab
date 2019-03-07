@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 8688034790360527820}
   - component: {fileID: 3885587046030491495}
   - component: {fileID: 1408236479078173237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CRoom01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

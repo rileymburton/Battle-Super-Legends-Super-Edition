@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 4674999932550159223}
   - component: {fileID: 88769453846013240}
   - component: {fileID: 5421581603774954092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IRoom01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
