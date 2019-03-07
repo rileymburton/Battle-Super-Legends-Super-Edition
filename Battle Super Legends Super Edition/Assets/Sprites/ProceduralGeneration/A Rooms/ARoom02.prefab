@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 5264319250040416946}
   - component: {fileID: 8617035726944953438}
   - component: {fileID: 3156625799040985677}
-  m_Layer: 0
+  - component: {fileID: 7805190388912040898}
+  - component: {fileID: 4449011447360940554}
+  - component: {fileID: 1687755424834095591}
+  m_Layer: 8
   m_Name: ARoom02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +141,103 @@ EdgeCollider2D:
   - {x: -4.9858537, y: 4.993723}
   - {x: -4.999091, y: 4.999296}
   - {x: -4.376372, y: 4.9999933}
+  - {x: -4.374856, y: 4.3750033}
+  - {x: -3.125003, y: 4.3749747}
+  - {x: -3.1231744, y: 5.00153}
+  - {x: -1.8748491, y: 5.0003285}
+  - {x: -1.8744746, y: 4.375378}
+  - {x: -2.5000203, y: 4.3756227}
+  - {x: -2.4995732, y: 3.747929}
+  - {x: -4.3749475, y: 3.7499845}
   - {x: -4.372548, y: -4.9983187}
   - {x: -4.997902, y: -4.9980774}
   - {x: -5.001593, y: 4.995604}
+--- !u!68 &7805190388912040898
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.3875494, y: -0.62678385}
+  - {x: -3.7498288, y: -0.625691}
+  - {x: -3.7495458, y: -1.2499117}
+  - {x: -2.4982421, y: -1.2544702}
+  - {x: -2.496772, y: -1.8718652}
+  - {x: -4.3738794, y: -1.8749416}
+--- !u!68 &4449011447360940554
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.381412, y: -3.1248376}
+  - {x: -1.8747357, y: -3.1247535}
+  - {x: -1.8747022, y: -2.4996688}
+  - {x: -0.0007545799, y: -2.5010257}
+  - {x: 0.00038330257, y: -3.1253138}
+  - {x: -1.2429565, y: -3.1238618}
+  - {x: -1.2496552, y: -3.7499518}
+  - {x: -4.380353, y: -3.750347}
+--- !u!68 &1687755424834095591
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.0004576519, y: -4.374752}
+  - {x: -0.00055120327, y: -5.000607}
+  - {x: 5.0013094, y: -5.001475}
+  - {x: 5.0004554, y: 5.0006113}
+  - {x: 4.375019, y: 5.000209}
+  - {x: 4.372002, y: 2.5013404}
+  - {x: 2.4999886, y: 2.4999905}
+  - {x: 2.501537, y: 3.1241474}
+  - {x: 1.2501905, y: 3.1255012}
+  - {x: 1.2523845, y: 3.7525787}
+  - {x: -1.250199, y: 3.7501745}
+  - {x: -1.2505801, y: 3.1259527}
+  - {x: 0.6242084, y: 3.1242137}
+  - {x: 0.6236359, y: 2.4987378}
+  - {x: 1.8748901, y: 2.5000873}
+  - {x: 1.8741145, y: 1.8743403}
+  - {x: 4.3673353, y: 1.8660165}
+  - {x: 4.37494, y: -1.2501757}
+  - {x: 2.4999864, y: -1.2499714}
+  - {x: 2.4996247, y: -1.8751212}
+  - {x: 1.8745375, y: -1.8741038}
+  - {x: 1.8744506, y: -2.501619}
+  - {x: 3.1261938, y: -2.5000064}
+  - {x: 3.1254475, y: -1.8743765}
+  - {x: 4.374653, y: -1.8746225}
+  - {x: 4.3718014, y: -4.381056}
+  - {x: -0.0001758486, y: -4.3737454}
