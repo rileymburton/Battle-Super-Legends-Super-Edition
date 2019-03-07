@@ -16,7 +16,6 @@ public class HitboxManager : MonoBehaviour {
     void Start()
     {
         animator        = this.GetComponent<Animator>();
-        CombinedMove Cm = this.GetComponent<CombinedMove>();
         offsetSwap      = 1;
         hitbox.enabled  = false;
         move = false;

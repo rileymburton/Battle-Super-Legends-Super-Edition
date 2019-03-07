@@ -1387,12 +1387,8 @@ MonoBehaviour:
   slot2: {fileID: 2058362904}
   slot3: {fileID: 2094712557}
   slot4: {fileID: 1202756863}
+  inventorySlots: []
   inventory: 00000000000000000000000000000000
-  coin: 0
-  metal: 0
-  leather: 0
-  wood: 0
-  ether: 0
   healthBar: {fileID: 1150206863}
   healthDisplay: {fileID: 510958658}
   coinDisplay: {fileID: 1184299633}
@@ -1657,11 +1653,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2388fc7e3869942b54facc8fe2cd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hm: {fileID: 0}
-  Kb: {fileID: 0}
+  Hm: {fileID: 1771348413}
+  Kb: {fileID: 1771348412}
   Hd: {fileID: 0}
-  hurtbox1: {fileID: 0}
-  hurtbox2: {fileID: 0}
+  hurtbox1: {fileID: 1771348414}
+  hurtbox2: {fileID: 1771348407}
   facingRight: 0
   action: 0
   playerHealth: 0
@@ -1726,8 +1722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126500e2b4cad9e4ebb6d50754399c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cm: {fileID: 0}
-  hitbox: {fileID: 0}
+  Cm: {fileID: 1771348409}
+  hitbox: {fileID: 1771348415}
   move: 0
 --- !u!61 &1771348414
 BoxCollider2D:
