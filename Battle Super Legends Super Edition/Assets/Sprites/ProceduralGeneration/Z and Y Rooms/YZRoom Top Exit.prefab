@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4033448729062706}
   - component: {fileID: 212680397653961796}
   - component: {fileID: 1209881045053130514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YZRoom Top Exit
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
