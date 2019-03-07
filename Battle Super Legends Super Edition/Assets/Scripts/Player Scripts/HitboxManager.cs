@@ -55,7 +55,8 @@ public class HitboxManager : MonoBehaviour {
 
     public void activate()
     {
-        hitbox.enabled = true;
+        if (Cm.action != 3)
+            hitbox.enabled = true;
         move = true;
         Debug.Log("Hitbox Activated");
     }
