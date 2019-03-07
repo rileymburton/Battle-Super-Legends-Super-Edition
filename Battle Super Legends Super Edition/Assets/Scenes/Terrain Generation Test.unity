@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035f2ac9a0b707744b94dd677bea00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomA: {fileID: 8392489034448406938, guid: 581d059b6c78d2d44a8f1aa1da4a5f8d, type: 3}
+  roomA: {fileID: 2584710564266537046, guid: 581d059b6c78d2d44a8f1aa1da4a5f8d, type: 3}
   roomA1: {fileID: 9070908215437234260, guid: 744d896abc86fd84eb824cea5716dc3d, type: 3}
   roomA2: {fileID: 2118776652855946517, guid: cf48ec4e5bd02584f8dd22fa81405bfc, type: 3}
   roomB: {fileID: 3928486536587439963, guid: 7eff46ab5750d1b46980cf5327b2d21c, type: 3}
@@ -163,7 +163,7 @@ MonoBehaviour:
   roomG1: {fileID: 8166480475791995568, guid: 9054efc47d73cf5489a0ded221d61e6c, type: 3}
   roomG2: {fileID: 4013425235349630940, guid: faa2e1db3c0789c4fba336e6981ef1a5, type: 3}
   roomH: {fileID: 8729413114059215501, guid: 515e73d0288d4f0418684d3894f130a6, type: 3}
-  roomH1: {fileID: 3291444184587551796, guid: b805c2227b30af8478635ce202ed6483, type: 3}
+  roomH1: {fileID: 8729413114059215501, guid: 515e73d0288d4f0418684d3894f130a6, type: 3}
   roomH2: {fileID: 7826811068520641664, guid: 617ef056a04feb542beb805286fe8fb3, type: 3}
   roomI: {fileID: 8833207152023145834, guid: d0076a8b13174234da32fbc168a85eba, type: 3}
   roomI1: {fileID: 5495069896386888998, guid: 8e3f61dd2c3eb9c4bb16b4b58a40c9cc, type: 3}

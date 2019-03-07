@@ -468,6 +468,7 @@ public class MapGenerator : MonoBehaviour {
 				int randomChoice;
 				if(roomExitType[i] == "A"){
 				 	randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomA, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -480,6 +481,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "B"){
 				 	randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomB, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -492,6 +494,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "C"){
 				 	randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomC, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -504,6 +507,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "D"){
 				    randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomD, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -516,6 +520,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "E"){
 					randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomE, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -528,6 +533,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "F"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomF, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -540,6 +546,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "G"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomG, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -552,6 +559,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "H"){
 					randomChoice = Random.Range(0,2);
+					randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomH, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -564,6 +572,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "I"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomI, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -576,6 +585,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "J"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomJ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -588,6 +598,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "XTopExit"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomXTop, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -599,7 +610,8 @@ public class MapGenerator : MonoBehaviour {
 					}
 				}
 				else if(roomExitType[i] == "XBottomExit"){
-				 		randomChoice = Random.Range(0,2);
+				randomChoice = Random.Range(0,2);
+				randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomXBottom, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -612,6 +624,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "XRightExit"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomXRight, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
@@ -624,6 +637,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 				else if(roomExitType[i] == "XLeftExit"){
 				 	randomChoice = Random.Range(0,2);
+					 randomChoice = 0;
 					if(randomChoice == 0){
 						Instantiate(roomXLeft, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 					}
