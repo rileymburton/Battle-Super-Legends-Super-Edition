@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public CombinedMove Cm = new CombinedMove();
+    private CombinedMove Cm;
     public GameObject slot1;
     public GameObject slot2;
     public GameObject slot3;
@@ -37,7 +37,7 @@ public class HealthDisplay : MonoBehaviour
     {
         inventorySlots = GameObject.FindGameObjectsWithTag("InventorySlots");
         spriteR = gameObject.GetComponent<SpriteRenderer>();
-        sprites = Resources.LoadAll<Sprite>("inventory");
+        sprites = Resources.LoadAll<Sprite>("item");
 
         healthBar.maxValue = Cm.maxHealth;
         coin    = 300;
@@ -53,11 +53,11 @@ public class HealthDisplay : MonoBehaviour
         healthDisplay.text  = Cm.playerHealth+"/"+Cm.maxHealth;
         healthBar.value = Cm.playerHealth;
 
-        coinDisplay.text    = coin.ToString();
-        metalDisplay.text   = metal.ToString();
-        leatherDisplay.text = leather.ToString();
-        woodDisplay.text    = wood.ToString();
-        etherDisplay.text   = ether.ToString();
+        coinDisplay.text    = ""+coin.ToString();
+        metalDisplay.text   = ""+metal.ToString();
+        leatherDisplay.text = ""+leather.ToString();
+        woodDisplay.text    = ""+wood.ToString();
+        etherDisplay.text   = ""+ether.ToString();
 
         for (int i = 0; i > 4; i++)
         {

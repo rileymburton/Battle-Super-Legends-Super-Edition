@@ -6,8 +6,8 @@ public class CombinedMove : MonoBehaviour {
 
 	public HitboxManager Hm;
 	public KeybindingsScript Kb;
-	public HealthDisplay Hd;
-	private int   dashSpeedInputDuration = 40;
+	private HealthDisplay Hd;
+	private int dashSpeedInputDuration = 40;
 	public BoxCollider2D hurtbox1;
 	public CircleCollider2D hurtbox2;
 
@@ -32,8 +32,6 @@ public class CombinedMove : MonoBehaviour {
 	float walkspeed;
 	float setJumpHeight;
 	float speedMultiplier;
-	float lastTapTime;
-	float tapSpeed;
 
 	//used for combat
 	public int playerHealth;
@@ -48,17 +46,15 @@ public class CombinedMove : MonoBehaviour {
 		spriteRenderer = this.GetComponent<SpriteRenderer>();
 
 		playerHealth  = maxHealth; //changeable
-		setJumpHeight = .18f;      //changeable
+		setJumpHeight = 0.18f;     //changeable
 		setAirOptions = 1;         //changeable
-		walkspeed     = .06f;      //changeable
+		walkspeed     = 0.06f;     //changeable
 		dashSpeed     = 1.75f;     //changeable
-		gravity       = .013f;     //changeable
-		tapSpeed      = .5f;       //changeable
+		gravity       = 0.013f;    //changeable
 		jumpHeight    = setJumpHeight;
 		airOptions    = setAirOptions;
 		grounded      = true;
 		facingRight   = true;
-		lastTapTime   = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -90,18 +86,18 @@ public class CombinedMove : MonoBehaviour {
 		if (Input.GetKeyDown(KeybindingsScript.Kb.mediumAttack))//activate H
 		{
 			//getInventoryItem();
+			if (grounded)
+			{
 				action = 2;
-				if (!grounded)
-				{
-					airOptions--;
-				}
 				transform.position = getJump();
+			}
 		}
 		//roll
 		if (Input.GetKeyDown(KeybindingsScript.Kb.heavyAttack))//activate S
 		{
 			action = 3;
 			getRoll(facingRight, grounded);
+			Debug.Log("Should be Rolling");
 		}
 
 		//move left
@@ -185,8 +181,6 @@ public class CombinedMove : MonoBehaviour {
 			airOptions = setAirOptions;	
 		}
 
-
-
 		if(grounded && !wasGrounded)
 			action = 0;
 
@@ -220,7 +214,8 @@ public class CombinedMove : MonoBehaviour {
 		if (grounded)
 		{
 			action = 3;
-			for(int i = 30; i > 0; i--)
+			animator.SetInteger("action", action);
+			if (Hm.move)
 			{
 				hurtbox1.enabled = false;
 				hurtbox2.enabled = false;
@@ -233,8 +228,11 @@ public class CombinedMove : MonoBehaviour {
 					transform.Translate(-0.1f, 0, 0);
 				}
 			}
-			hurtbox1.enabled = true;
-			hurtbox2.enabled = true;
+			if (!Hm.move)
+			{
+				hurtbox1.enabled = true;
+				hurtbox2.enabled = true;
+			}
 		}
 	}
 
