@@ -215,17 +215,17 @@ public class CombinedMove : MonoBehaviour {
 		{
 			action = 3;
 			animator.SetInteger("action", action);
-			if (Hm.move)
+			for(int i = 0; i < 20; i++)
 			{
 				hurtbox1.enabled = false;
 				hurtbox2.enabled = false;
 				if (facingRight)
 				{
-					transform.Translate(0.1f, 0, 0);
+					transform.Translate(0.01f, 0, 0);
 				}
 				if (!facingRight)
 				{
-					transform.Translate(-0.1f, 0, 0);
+					transform.Translate(-0.01f, 0, 0);
 				}
 			}
 			if (!Hm.move)
