@@ -78,7 +78,7 @@ public class MapGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		numberOfRooms = Random.Range(20,40);
+		numberOfRooms = Random.Range(15,30);
 		Debug.Log("Number of Rooms = " + numberOfRooms);
 		GenerateMap();
 		AssignRoomCode();
@@ -339,7 +339,7 @@ public class MapGenerator : MonoBehaviour {
 			bool canGoRight = true;
 			bool canGoDown = true;
 			bool canGoLeft = true;
-			int numberOfBranchingRooms = Random.Range(5, 15);
+			int numberOfBranchingRooms = Random.Range(4, 10);
 			List<int> BranchingRoomsDirection = new List<int>();
 			BranchingRoomsDirection.Add(prevDirection);
 			int randomDirection;
