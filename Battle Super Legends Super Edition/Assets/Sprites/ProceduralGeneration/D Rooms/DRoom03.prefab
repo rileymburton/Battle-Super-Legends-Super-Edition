@@ -10,10 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8275533427464917198}
   - component: {fileID: 971278266457454784}
+<<<<<<< HEAD
   - component: {fileID: 2156951855017430838}
   m_Layer: 0
+=======
+  m_Layer: 8
+>>>>>>> cb4cccbdc194be5afcf88c21f895bac884e0f83e
   m_Name: DRoom03
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -78,7 +78,7 @@ public class MapGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		numberOfRooms = Random.Range(40,80);
+		numberOfRooms = Random.Range(20,40);
 		Debug.Log("Number of Rooms = " + numberOfRooms);
 		GenerateMap();
 		AssignRoomCode();
