@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3516958617340962694}
   - component: {fileID: 1331292970343412153}
   - component: {fileID: 1688053135559969489}
+  - component: {fileID: 8208064588292685247}
   m_Layer: 8
   m_Name: FRoom01
   m_TagString: Obstacle
@@ -236,3 +237,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6236763, y: 1.25035}
   m_EdgeRadius: 0
+--- !u!50 &8208064588292685247
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221054230337063654}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

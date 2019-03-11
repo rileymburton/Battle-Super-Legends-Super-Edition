@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8871147107657497687}
   - component: {fileID: 5312239174737110996}
   - component: {fileID: 8589878069653541320}
+  - component: {fileID: 7431100072278616437}
   m_Layer: 0
   m_Name: JRoom03
   m_TagString: Untagged
@@ -149,3 +150,24 @@ PolygonCollider2D:
       - {x: 3.2470703, y: -0.08300781}
       - {x: 5, y: 4.3603516}
       - {x: 5, y: 5}
+--- !u!50 &7431100072278616437
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426822608883374161}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
