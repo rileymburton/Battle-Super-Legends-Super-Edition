@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7805190388912040898}
   - component: {fileID: 4449011447360940554}
   - component: {fileID: 1687755424834095591}
+  - component: {fileID: 567735381031493868}
   m_Layer: 8
   m_Name: ARoom02
   m_TagString: Obstacle
@@ -241,3 +242,24 @@ EdgeCollider2D:
   - {x: 4.374653, y: -1.8746225}
   - {x: 4.3718014, y: -4.381056}
   - {x: -0.0001758486, y: -4.3737454}
+--- !u!50 &567735381031493868
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070908215437234260}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

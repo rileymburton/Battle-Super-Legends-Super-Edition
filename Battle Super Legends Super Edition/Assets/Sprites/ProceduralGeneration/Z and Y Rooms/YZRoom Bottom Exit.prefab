@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4410134776286606}
   - component: {fileID: 212553177148619510}
   - component: {fileID: 5781204317297322445}
+  - component: {fileID: 5807763476491486651}
   m_Layer: 8
   m_Name: YZRoom Bottom Exit
   m_TagString: Obstacle
@@ -105,3 +106,24 @@ EdgeCollider2D:
   - {x: 4.3755984, y: 4.375829}
   - {x: -4.374262, y: 4.3757796}
   - {x: -4.3745136, y: -4.9985313}
+--- !u!50 &5807763476491486651
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689445815194440}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

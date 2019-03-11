@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7729687892767066495}
   - component: {fileID: 6900361412753753280}
   - component: {fileID: 1473533100585858720}
+  - component: {fileID: 4090959721322235230}
   m_Layer: 8
   m_Name: HRoom01
   m_TagString: Obstacle
@@ -332,3 +333,24 @@ EdgeCollider2D:
   - {x: 4.3751802, y: 3.7495651}
   - {x: 4.3741684, y: 4.9995356}
   - {x: 4.9999485, y: 4.9999075}
+--- !u!50 &4090959721322235230
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729413114059215501}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

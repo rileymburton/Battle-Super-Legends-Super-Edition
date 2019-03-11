@@ -53,7 +53,7 @@ public class CombinedMove : MonoBehaviour {
 		gravity       = 0.013f;    //changeable
 		jumpHeight    = setJumpHeight;
 		airOptions    = setAirOptions;
-		grounded      = true;
+		grounded      = false;
 		facingRight   = true;
 	}
 	
@@ -171,20 +171,33 @@ public class CombinedMove : MonoBehaviour {
 		}
 
 		//activate gravity if airborn
-		if (!grounded && transform.position.y > -.8f)
-		{
+		if (!grounded)
+		//{
 			transform.position = getGravity(grounded);
-		} else if (transform.position.y <= -.8f) {
+		/*}  else if (hurtbox2) {
 			grounded = true;
 			transform.position = new Vector2(transform.position.x, -.8f);
 			jumpHeight = setJumpHeight;
 			airOptions = setAirOptions;	
 		}
+		*/
 
 		if(grounded && !wasGrounded)
 			action = 0;
 
 		wasGrounded = grounded;
+	}
+
+	//sets grounded if colliding with ground
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "obstacle")
+		{
+			Debug.Log("Touching Ground");
+			grounded = true;
+			jumpHeight = setJumpHeight;
+			airOptions = setAirOptions;	
+		}
 	}
 
 	//jump method, calls gravity

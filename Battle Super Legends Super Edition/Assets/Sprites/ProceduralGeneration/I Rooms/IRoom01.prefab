@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4674999932550159223}
   - component: {fileID: 88769453846013240}
   - component: {fileID: 5421581603774954092}
+  - component: {fileID: 501368258125595793}
   m_Layer: 8
   m_Name: IRoom01
   m_TagString: Obstacle
@@ -282,3 +283,24 @@ EdgeCollider2D:
   - {x: 3.1249695, y: 4.3749456}
   - {x: 5.0000315, y: 4.375046}
   - {x: 4.9998417, y: 4.9996996}
+--- !u!50 &501368258125595793
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833207152023145834}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
