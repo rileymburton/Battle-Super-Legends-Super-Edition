@@ -945,13 +945,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8177429054412303940}
   - component: {fileID: 8177429054412303938}
-  - component: {fileID: 8177429054412303943}
+  - component: {fileID: 7363605803990061582}
   - component: {fileID: 8177429054412303939}
   - component: {fileID: 8177429054412303942}
   - component: {fileID: 8177429054412303941}
   - component: {fileID: 8177429054412303945}
   - component: {fileID: 8177429054412303936}
   - component: {fileID: 8177429054412303937}
+  - component: {fileID: 5882718256227806256}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -986,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4551e4fcbd5fd4ba562b9695958c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8177429054412303943
+--- !u!114 &7363605803990061582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -995,19 +996,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8177429054412303944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2388fc7e3869942b54facc8fe2cd7d, type: 3}
+  m_Script: {fileID: 11500000, guid: b4cc78d664a7e15418a6c8af69ae46e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hm: {fileID: 8177429054412303939}
-  Kb: {fileID: 8177429054412303938}
-  hurtbox1: {fileID: 8177429054412303936}
-  hurtbox2: {fileID: 8177429054412303945}
-  facingRight: 0
+  flipSprite: 0
   action: 0
-  playerHealth: 0
-  maxHealth: 100
-  lightAttackDamage: 50
-  heavyAttackDamage: 110
+  rb2D: {fileID: 5882718256227806256}
 --- !u!114 &8177429054412303939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126500e2b4cad9e4ebb6d50754399c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cm: {fileID: 8177429054412303943}
+  M2: {fileID: 7363605803990061582}
   hitbox: {fileID: 8177429054412303937}
   move: 0
 --- !u!212 &8177429054412303942
@@ -1158,6 +1152,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
+--- !u!50 &5882718256227806256
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177429054412303944}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8177429054473766016
 GameObject:
   m_ObjectHideFlags: 0

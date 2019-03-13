@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitboxManager : MonoBehaviour {
     
-    public CombinedMove Cm;
+    public Movement2 M2;
     public BoxCollider2D hitbox = new BoxCollider2D();
     public bool move;
     GameObject  Player;
@@ -23,25 +23,23 @@ public class HitboxManager : MonoBehaviour {
 
     void Update()
     {
-        if (Cm.facingRight == true)
+        if (M2.flipSprite == false)
         {
             offsetSwap = 1;
-        } else if (Cm.facingRight == false)
+        } else if (M2.flipSprite == true)
         {
             offsetSwap = -1;
         }
-        if (Cm.action == 1)//L
+        if (M2.action == 1)//L
         {
             hitbox.size = new Vector2(.25f, .25f);//set size
             hitbox.offset = new Vector2(.2f * offsetSwap, 0);//set offset
-            playerDamage = Cm.lightAttackDamage;
-        } else if (Cm.action == 2)//H
+        } else if (M2.action == 2)//H
         {
             hitbox.size = new Vector2(.25f, .5f);//set size
             hitbox.offset = new Vector2(.15f * offsetSwap, 0);//set offset
-            playerDamage = Cm.lightAttackDamage;
         }
-        if (Cm.action == 0)
+        if (M2.action == 0)
         {
             move = false;
         }
@@ -50,12 +48,11 @@ public class HitboxManager : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collision Detected");
-        //EnemyBehaviors.enemyHealth -= playerDamage;
     }
 
     public void activate()
     {
-        if (Cm.action != 3)
+        if (M2.action != 3)
             hitbox.enabled = true;
         move = true;
         Debug.Log("Hitbox Activated");
@@ -68,7 +65,7 @@ public class HitboxManager : MonoBehaviour {
     }
     public void end()
     {
-        Cm.action = 0;
+        M2.action = 0;
         hitbox.enabled = false;
         move = false;
         animator.SetInteger("action", 0);

@@ -217,7 +217,7 @@ public class CombinedMove : MonoBehaviour {
 		if (!grounded)
 		{
 			transform.Translate(0, jumpHeight, 0);
-			jumpHeight -= gravity;
+			//jumpHeight -= gravity;
 		}
 		return transform.position;
 	}
