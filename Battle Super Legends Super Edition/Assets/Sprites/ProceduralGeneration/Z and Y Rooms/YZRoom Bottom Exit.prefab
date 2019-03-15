@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4410134776286606}
   - component: {fileID: 212553177148619510}
-  - component: {fileID: 5781204317297322445}
   - component: {fileID: 5807763476491486651}
+  - component: {fileID: 4897680074363589241}
   m_Layer: 8
   m_Name: YZRoom Bottom Exit
   m_TagString: Obstacle
@@ -81,31 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!68 &5781204317297322445
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689445815194440}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -4.3736844, y: -4.999222}
-  - {x: -5.0010347, y: -5.000107}
-  - {x: -4.9993024, y: 4.9996467}
-  - {x: 5.00432, y: 5.0037556}
-  - {x: 5.0015655, y: -4.999223}
-  - {x: 4.372156, y: -5.0016646}
-  - {x: 4.3755984, y: 4.375829}
-  - {x: -4.374262, y: 4.3757796}
-  - {x: -4.3745136, y: -4.9985313}
 --- !u!50 &5807763476491486651
 Rigidbody2D:
   serializedVersion: 4
@@ -127,3 +102,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &4897680074363589241
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689445815194440}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5, y: 5}
+      - {x: -5, y: 5}
+      - {x: -5, y: -5}
+      - {x: -4.3746843, y: -5.0000668}
+      - {x: -4.3751884, y: 4.3747835}
+      - {x: 4.3750353, y: 4.3749056}
+      - {x: 4.374549, y: -5.0004206}
+      - {x: 5, y: -5}
