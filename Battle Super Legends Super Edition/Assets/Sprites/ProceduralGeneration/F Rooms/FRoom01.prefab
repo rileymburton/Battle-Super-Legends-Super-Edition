@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4690969377329804848}
   - component: {fileID: 8933496564977070056}
   - component: {fileID: 8208064588292685247}
+  - component: {fileID: 1327345208663127498}
   m_Layer: 8
   m_Name: FRoom01
   m_TagString: Obstacle
