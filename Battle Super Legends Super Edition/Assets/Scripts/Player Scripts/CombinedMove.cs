@@ -7,9 +7,9 @@ public class CombinedMove : MonoBehaviour {
 	public HitboxManager Hm;
 	public KeybindingsScript Kb;
 	private HealthDisplay Hd;
-	private int dashSpeedInputDuration = 40;
 	public BoxCollider2D hurtbox1;
 	public CircleCollider2D hurtbox2;
+	public Rigidbody2D rb2D;
 
 	//used by animator
 	Animator       animator;
@@ -23,6 +23,7 @@ public class CombinedMove : MonoBehaviour {
 	Vector2        prevYPos;
 
 	//used by movement
+	int   dashSpeedInputDuration = 40;
 	int   setAirOptions;
 	int   buttonHeld;
 	int   airOptions;
@@ -36,12 +37,11 @@ public class CombinedMove : MonoBehaviour {
 	//used for combat
 	public int playerHealth;
 	public int maxHealth = 100;
-	public int lightAttackDamage = 50;
-	public int heavyAttackDamage = 110;
 
 	// Use this for initialization
 	void Start () 
 	{
+		rb2D = this.GetComponent<Rigidbody2D>();
 		animator = this.GetComponent<Animator>();
 		spriteRenderer = this.GetComponent<SpriteRenderer>();
 
@@ -50,7 +50,7 @@ public class CombinedMove : MonoBehaviour {
 		setAirOptions = 1;         //changeable
 		walkspeed     = 0.06f;     //changeable
 		dashSpeed     = 1.75f;     //changeable
-		gravity       = 0.013f;    //changeable
+		gravity       = 0.0f;    //changeable
 		jumpHeight    = setJumpHeight;
 		airOptions    = setAirOptions;
 		grounded      = false;
@@ -101,8 +101,7 @@ public class CombinedMove : MonoBehaviour {
 		}
 
 		//move left
-		if (Input.GetKey(KeybindingsScript.Kb.left) &&
-			!Input.GetKey(KeybindingsScript.Kb.right))
+		if (Input.GetKey(KeybindingsScript.Kb.left))
 		{
 			moveDirection = -1;
 			if (buttonHeld >= dashSpeedInputDuration)
@@ -111,23 +110,14 @@ public class CombinedMove : MonoBehaviour {
 			} else if (buttonHeld < dashSpeedInputDuration) {
 				speedMultiplier = -1;
 			}
-			if (grounded)
-			{
-				action = 0;
-				facingRight = false;
-				transform.Translate(walkspeed*speedMultiplier, 0, 0);
-			}
-			else if (!grounded)
-			{
-				transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
-			}
-			Debug.Log("Moving Left");
+			action = 0;
+			facingRight = false;
+			transform.Translate(walkspeed*speedMultiplier, 0, 0);
 			buttonHeld++;
 		}
 
 		//move right
-		if (Input.GetKey(KeybindingsScript.Kb.right) &&
-			!Input.GetKey(KeybindingsScript.Kb.left))
+		if (Input.GetKey(KeybindingsScript.Kb.right))
 		{
 			moveDirection = 1;
 			if (buttonHeld >= dashSpeedInputDuration)
@@ -136,18 +126,10 @@ public class CombinedMove : MonoBehaviour {
 			} else if (buttonHeld < dashSpeedInputDuration) {
 				speedMultiplier = 1;
 			}
-			if (grounded)
-			{
-				action = 0;
-				facingRight = true;
-				transform.Translate(walkspeed*speedMultiplier, 0, 0);
-			}
-			else if (!grounded)
-			{
-				transform.Translate(walkspeed*.85f*speedMultiplier, 0, 0);
-			}
+			action = 0;
+			facingRight = true;
+			transform.Translate(walkspeed*speedMultiplier, 0, 0);
 			buttonHeld++;
-			Debug.Log("Moving Right");
 		}
 		
 		//jump
@@ -173,7 +155,7 @@ public class CombinedMove : MonoBehaviour {
 		//activate gravity if airborn
 		if (!grounded)
 		//{
-			transform.position = getGravity(grounded);
+			//transform.position = getGravity(grounded);
 		/*}  else if (hurtbox2) {
 			grounded = true;
 			transform.position = new Vector2(transform.position.x, -.8f);
@@ -189,8 +171,12 @@ public class CombinedMove : MonoBehaviour {
 	}
 
 	//sets grounded if colliding with ground
-	void OnCollisionEnter(Collision col)
-	{
+	
+
+	//void OnCollisionStay2D(Collision2D col)
+	void OnCollisionStay2D(Collision2D col)
+    {
+		Debug.Log("rkrkrkrk");
 		if (col.gameObject.tag == "obstacle")
 		{
 			Debug.Log("Touching Ground");
@@ -203,24 +189,26 @@ public class CombinedMove : MonoBehaviour {
 	//jump method, calls gravity
 	public Vector2 getJump()
 	{	
-		jumpHeight = setJumpHeight;
+		//jumpHeight = setJumpHeight;
 		grounded = false;
-		transform.position = getGravity(grounded);
+		//transform.position = getGravity(grounded);
+		rb2D.AddForce(new Vector3(0, jumpHeight, 0), ForceMode2D.Impulse);
 
 		Debug.Log("Jumping");
 		return transform.position;
 	}
 
+	/*
 	//calculate gravity
 	private Vector2 getGravity(bool grounded)
 	{
 		if (!grounded)
 		{
 			transform.Translate(0, jumpHeight, 0);
-			//jumpHeight -= gravity;
+			jumpHeight -= gravity;
 		}
 		return transform.position;
-	}
+	}*/
 	
 	public void getRoll(bool facingRight, bool grounded)
 	{

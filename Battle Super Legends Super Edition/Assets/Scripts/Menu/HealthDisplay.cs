@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
+    public GameObject Player;
     private CombinedMove Cm;
     public GameObject slot1;
     public GameObject slot2;
     public GameObject slot3;
     public GameObject slot4;
-    public GameObject[] inventorySlots;
+    public GameObject[] inventorySlots = new GameObject[4];
     
     //storage ints
     public int[] inventory = new int[4];
@@ -35,9 +36,9 @@ public class HealthDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventorySlots = GameObject.FindGameObjectsWithTag("InventorySlots");
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("item");
+        Cm = Player.GetComponent<CombinedMove>();
 
         healthBar.maxValue = Cm.maxHealth;
         coin    = 300;

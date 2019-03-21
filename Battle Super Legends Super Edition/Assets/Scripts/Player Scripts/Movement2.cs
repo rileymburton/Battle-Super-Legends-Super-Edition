@@ -5,16 +5,15 @@ using UnityEngine;
 public class Movement2 : MonoBehaviour
 {
 	private KeybindingsScript Kb;
-    int doubleJumps;
-    int setDoubleJumps;
+    public  Rigidbody2D rb2D;
+    public  bool flipSprite;
+    public  int action;
+    int   doubleJumps;
+    int   setDoubleJumps;
+    int   moveDirection;
+    bool  grounded;
     float jumpHeight;
-    public bool flipSprite;
     float walkspeed;
-    bool grounded;
-    int moveDirection;
-    public int action;
-    private Vector2 velocity = Vector2.zero;
-    public Rigidbody2D rb2D = new Rigidbody2D();
 
     Animator       animator;
 	SpriteRenderer spriteRenderer;
@@ -23,15 +22,16 @@ public class Movement2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb2D = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
 		spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         setDoubleJumps = 1;
-        doubleJumps = setDoubleJumps;
-        jumpHeight = 5;
-        flipSprite = true;
-        walkspeed = .5f;
-        grounded = true;
+        doubleJumps    = setDoubleJumps;
+        jumpHeight     = 5;
+        flipSprite     = false;
+        walkspeed      = .5f;
+        grounded       = true;
     }
 
     // Update is called once per frame
@@ -77,17 +77,17 @@ public class Movement2 : MonoBehaviour
         if (Input.GetKey(KeybindingsScript.Kb.jump) && grounded == true)
         {
             grounded = false;
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }
         //checks if a double jump is possible and jumps
         if (Input.GetKey(KeybindingsScript.Kb.jump) && grounded == false && doubleJumps > 0)
         {
             doubleJumps--;
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
         }
     }
 
-    void OnCollisionEnter(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         //sets grounded if it collides with the ground
         if (col.gameObject.tag == "obstacle")
