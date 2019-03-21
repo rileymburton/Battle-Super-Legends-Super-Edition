@@ -47,12 +47,26 @@ public class wraithEnemyAI : MonoBehaviour
         StartCoroutine (UpdatePath ());
     }
     IEnumerator searchForPlayer(){
-        
-    }
+        GameObject sResult = GameObject.FindGameObjectWithTag ("Player");
+        if (sResult == null){
+            yield return new WaitForSeconds (0.5f);
+            StartCoroutine(searchForPlayer());
+        } else {
+            target = sResult.transform;
+            searchingForPlayer = false;
+            StartCoroutine (UpdatePath());
+
+            yield return false;
+        }
+    } 
 
     IEnumerator UpdatePath () {
         if(target == null){
-            //TODO insert a search mechanic
+            if(!searchingForPlayer){
+                searchingForPlayer = true;
+                StartCoroutine (searchForPlayer());
+            }
+
             yield return false;
         }
 
@@ -71,7 +85,11 @@ public class wraithEnemyAI : MonoBehaviour
     
     void FixedUpdate () {
         if(target == null){
-            //TODO insert a search mechanic
+            if(!searchingForPlayer){
+                searchingForPlayer = true;
+                StartCoroutine (searchForPlayer());
+            }
+
             return;
         }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2324537733303228892}
   - component: {fileID: 2324537733303228893}
   - component: {fileID: 2324537733303228894}
-  - component: {fileID: 2324537733303228881}
+  - component: {fileID: 5514768802133449605}
   m_Layer: 0
   m_Name: Chad1_0
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!50 &2324537733303228893
 Rigidbody2D:
   serializedVersion: 4
@@ -144,14 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa52d708b772fc4d944013dbf7146e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 8177429054412303940, guid: d08b121428517644f91f3813e4a98679, type: 3}
   updateRate: 2
   speed: 600
   fMode: 0
   PathisEnded: 0
   nextWaypointDistance: 1
---- !u!60 &2324537733303228881
-PolygonCollider2D:
+--- !u!61 &5514768802133449605
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -173,13 +173,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.07, y: 0.145}
-      - {x: -0.06815386, y: -0.027529716}
-      - {x: -0.055592775, y: -0.10516381}
-      - {x: -0.028593183, y: -0.1486969}
-      - {x: 0.02796185, y: -0.14814019}
-      - {x: 0.044472337, y: -0.11912072}
-      - {x: 0.06186652, y: -0.09211421}
-      - {x: 0.07, y: 0.145}
+  serializedVersion: 2
+  m_Size: {x: 0.14, y: 0.29}
+  m_EdgeRadius: 0
