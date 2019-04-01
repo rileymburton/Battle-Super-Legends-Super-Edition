@@ -50,7 +50,6 @@ public class CombinedMove : MonoBehaviour {
 		setAirOptions = 1;         //changeable
 		walkspeed     = 0.06f;     //changeable
 		dashSpeed     = 1.75f;     //changeable
-		gravity       = 0.0f;    //changeable
 		jumpHeight    = setJumpHeight;
 		airOptions    = setAirOptions;
 		grounded      = false;
@@ -152,18 +151,6 @@ public class CombinedMove : MonoBehaviour {
 			moveDirection = 0;
 		}
 
-		//activate gravity if airborn
-		if (!grounded)
-		//{
-			//transform.position = getGravity(grounded);
-		/*}  else if (hurtbox2) {
-			grounded = true;
-			transform.position = new Vector2(transform.position.x, -.8f);
-			jumpHeight = setJumpHeight;
-			airOptions = setAirOptions;	
-		}
-		*/
-
 		if(grounded && !wasGrounded)
 			action = 0;
 
@@ -171,44 +158,25 @@ public class CombinedMove : MonoBehaviour {
 	}
 
 	//sets grounded if colliding with ground
-	
-
-	//void OnCollisionStay2D(Collision2D col)
 	void OnCollisionStay2D(Collision2D col)
     {
-		Debug.Log("rkrkrkrk");
-		if (col.gameObject.tag == "obstacle")
+		Debug.Log("Collision Detected: "+col.ToString());
+		if (col.gameObject.tag == "Obstacle")
 		{
 			Debug.Log("Touching Ground");
 			grounded = true;
-			jumpHeight = setJumpHeight;
-			airOptions = setAirOptions;	
 		}
 	}
 
-	//jump method, calls gravity
+	//jump method
 	public Vector2 getJump()
-	{	
-		//jumpHeight = setJumpHeight;
+	{
 		grounded = false;
-		//transform.position = getGravity(grounded);
 		rb2D.AddForce(new Vector3(0, jumpHeight, 0), ForceMode2D.Impulse);
 
 		Debug.Log("Jumping");
 		return transform.position;
 	}
-
-	/*
-	//calculate gravity
-	private Vector2 getGravity(bool grounded)
-	{
-		if (!grounded)
-		{
-			transform.Translate(0, jumpHeight, 0);
-			jumpHeight -= gravity;
-		}
-		return transform.position;
-	}*/
 	
 	public void getRoll(bool facingRight, bool grounded)
 	{
