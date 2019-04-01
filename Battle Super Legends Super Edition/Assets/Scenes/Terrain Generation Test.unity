@@ -326,6 +326,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8177429054412303939, guid: d08b121428517644f91f3813e4a98679,
+        type: 3}
+      propertyPath: Cm
+      value: 
+      objectReference: {fileID: 1837368272}
+    - target: {fileID: 8177429054412303939, guid: d08b121428517644f91f3813e4a98679,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1837368265}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08b121428517644f91f3813e4a98679, type: 3}
 --- !u!1 &1790892305 stripped
@@ -358,6 +368,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1409116110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837368272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7028563987607217187, guid: d08b121428517644f91f3813e4a98679,
+    type: 3}
+  m_PrefabInstance: {fileID: 1409116110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837368265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2388fc7e3869942b54facc8fe2cd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1837368275
 Rigidbody2D:
   serializedVersion: 4
