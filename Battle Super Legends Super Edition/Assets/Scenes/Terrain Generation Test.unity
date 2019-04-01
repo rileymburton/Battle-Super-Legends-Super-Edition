@@ -656,6 +656,11 @@ PrefabInstance:
       propertyPath: graphMask.value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2324537733303228893, guid: 08e280da0ce68094c80aa79066c07683,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2324537733303228881, guid: 08e280da0ce68094c80aa79066c07683, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08e280da0ce68094c80aa79066c07683, type: 3}

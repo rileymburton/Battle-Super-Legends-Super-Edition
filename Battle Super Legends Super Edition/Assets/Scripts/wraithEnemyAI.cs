@@ -8,6 +8,7 @@ public class wraithEnemyAI : MonoBehaviour
 {
     public Transform target;
     public float updateRate = 2f;
+    public float distanceToPlayer;
 
     // caching
     private Seeker seeker;
@@ -33,18 +34,23 @@ public class wraithEnemyAI : MonoBehaviour
     void Start() {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        distanceToPlayer = updatePlayerDistance();
+        if(distanceToPlayer < 30f){
+            if(target == null){
+                if(!searchingForPlayer){
+                    searchingForPlayer = true;
+                    StartCoroutine (searchForPlayer());
+                }
 
-        if(target == null){
-            if(!searchingForPlayer){
-                searchingForPlayer = true;
-                StartCoroutine (searchForPlayer());
+                return;
             }
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
 
-            return;
+            StartCoroutine (UpdatePath ());
         }
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
-
-        StartCoroutine (UpdatePath ());
+        if(distanceToPlayer > 30f){
+            distanceToPlayer = updatePlayerDistance();
+        }
     }
     IEnumerator searchForPlayer(){
         GameObject sResult = GameObject.FindGameObjectWithTag ("Player");
@@ -60,6 +66,10 @@ public class wraithEnemyAI : MonoBehaviour
         }
     } 
 
+    float updatePlayerDistance(){
+        distanceToPlayer =  Vector3.Distance(target.position, this.transform.position);
+        return distanceToPlayer;
+    }
     IEnumerator UpdatePath () {
         if(target == null){
             if(!searchingForPlayer){
