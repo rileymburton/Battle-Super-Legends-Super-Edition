@@ -159,7 +159,7 @@ public class CombinedMove : MonoBehaviour {
 	}
 
 	//sets grounded if colliding with ground
-	void OnTriggerEnter2D(Collision2D col)
+	void OnColliderEnter2D(Collision2D col)
     {
 		Debug.Log("Collision Detected: "+col.ToString());
 		if (col.gameObject.tag == "Obstacle")
