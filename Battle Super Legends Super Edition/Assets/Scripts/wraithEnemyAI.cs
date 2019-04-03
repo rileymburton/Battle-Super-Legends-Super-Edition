@@ -35,7 +35,7 @@ public class wraithEnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         distanceToPlayer = updatePlayerDistance();
-        if(distanceToPlayer < 30f){
+        if(distanceToPlayer < 15f){
             if(target == null){
                 if(!searchingForPlayer){
                     searchingForPlayer = true;
@@ -48,7 +48,7 @@ public class wraithEnemyAI : MonoBehaviour
 
             StartCoroutine (UpdatePath ());
         }
-        if(distanceToPlayer > 30f){
+        if(distanceToPlayer > 15f){
             distanceToPlayer = updatePlayerDistance();
         }
     }
@@ -94,15 +94,14 @@ public class wraithEnemyAI : MonoBehaviour
     }
     
     void FixedUpdate () {
-        if(target == null){
-            if(!searchingForPlayer){
-                searchingForPlayer = true;
-                StartCoroutine (searchForPlayer());
+            if(target == null){
+                if(!searchingForPlayer){
+                    searchingForPlayer = true;
+                    StartCoroutine (searchForPlayer());
+                }
+
+                return;
             }
-
-            return;
-        }
-
         //TODO always look at player
 
         if(path == null){
