@@ -1136,3 +1136,4 @@ KonkyFixBuild/ProjectSettings/QualitySettings.asset
 KonkyFixBuild/ProjectSettings/TagManager.asset
 KonkyFixBuild/ProjectSettings/TimeManager.asset
 KonkyFixBuild/ProjectSettings/UnityConnectSettings.asset
+*.meta
