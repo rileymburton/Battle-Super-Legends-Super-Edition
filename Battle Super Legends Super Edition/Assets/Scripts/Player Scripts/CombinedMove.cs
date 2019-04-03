@@ -88,7 +88,6 @@ public class CombinedMove : MonoBehaviour {
 			if (grounded)
 			{
 				action = 2;
-				getJump();
 			}
 		}
 		//roll
