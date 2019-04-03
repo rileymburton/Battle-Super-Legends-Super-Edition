@@ -36,3 +36,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Battle Super Legends Super Edition/ProjectSettings/ProjectVersion.txt
+
+Battle Super Legends Super Edition/Assets/Sprites/CharSprites/Warlock\.meta
+
+Battle Super Legends Super Edition/Assets/Sprites/CharSprites/Necromancer\.meta
