@@ -135,11 +135,11 @@ public class CombinedMove : MonoBehaviour {
 		if (Input.GetKeyDown(KeybindingsScript.Kb.jump))
 		{
 			if (grounded)
-				getJump();
+				rb2D.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
 			else if (airOptions > 0)
 			{
 				airOptions--;
-				getJump();
+				rb2D.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
 			}
 		}
 
@@ -159,25 +159,31 @@ public class CombinedMove : MonoBehaviour {
 	}
 
 	//sets grounded if colliding with ground
-	void OnColliderEnter2D(Collision2D col)
+	void OnCollisionEnter2D(Collision2D col)
     {
 		Debug.Log("Collision Detected: "+col.ToString());
 		if (col.gameObject.tag == "Obstacle")
 		{
 			Debug.Log("Touching Ground");
 			grounded = true;
-			airOptions = setAirOptions;
 		}
 	}
-
-	//jump method
-	public Vector2 getJump()
-	{
-		grounded = false;
-		rb2D.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-
-		Debug.Log("Jumping");
-		return transform.position;
+	void OnCollisionStay2D(Collision2D col)
+    {
+		if (col.gameObject.tag == "Obstacle")
+		{
+			Debug.Log("Touching Ground");
+			grounded = true;
+		}
+	}
+	void OnCollisionExit2D(Collision2D col)
+    {
+		if (col.gameObject.tag == "Obstacle")
+		{
+			Debug.Log("Leaving");
+			grounded = false;
+			airOptions = setAirOptions;
+		}
 	}
 	
 	public void getRoll(bool facingRight, bool grounded)
