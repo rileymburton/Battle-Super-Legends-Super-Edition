@@ -30,6 +30,7 @@ public class wraithEnemyAI : MonoBehaviour
     private int currentWaypoint = 0;
 
     private bool searchingForPlayer = false;
+    [SerializeField] private bool isRoaming;
 
     void Start() {
         seeker = GetComponent<Seeker>();
@@ -93,7 +94,19 @@ public class wraithEnemyAI : MonoBehaviour
         }
     }
     
+    IEnumerator makeEnemyRoam() {
+                isRoaming = true;
+                rb.AddForce(Vector3.left *20);
+                yield return new WaitForSeconds(.5f);
+                rb.AddForce(Vector3.right *20);
+                isRoaming = false;
+    }
     void FixedUpdate () {
+         distanceToPlayer = updatePlayerDistance();
+            //Roaming
+            if(distanceToPlayer >=15f && distanceToPlayer <= 30f && isRoaming == false){
+                StartCoroutine(makeEnemyRoam());
+            }
             if(target == null){
                 if(!searchingForPlayer){
                     searchingForPlayer = true;

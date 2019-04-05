@@ -759,11 +759,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177429054023761899}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd444cc2e56438c4887041b1c37d17e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   slot1: {fileID: 8177429055558030712}
   slot2: {fileID: 8177429054728744934}
   slot3: {fileID: 8177429054635002131}
@@ -999,7 +1000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126500e2b4cad9e4ebb6d50754399c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  M2: {fileID: 0}
+  Player: {fileID: 0}
+  Cm: {fileID: 0}
   hitbox: {fileID: 8177429054412303937}
   move: 0
 --- !u!114 &7028563987607217187

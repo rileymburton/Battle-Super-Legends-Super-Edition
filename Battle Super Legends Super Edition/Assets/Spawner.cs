@@ -11,8 +11,9 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        // 1 2 3 4 5 6 7 8 9 10
-        int roll = Random.Range(1,11);
+        // rolls a number and generates either enemies or a chest or potentially nothing in a spawn point
+        // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 
+        int roll = Random.Range(1,15);
         if (roll >= 1 && roll <= 3){
             Instantiate(enemy1, this.transform.position, Quaternion.identity);
         }
@@ -22,7 +23,7 @@ public class Spawner : MonoBehaviour
         else if (roll >= 7 && roll <= 9){
             Instantiate(enemy3, this.transform.position, Quaternion.identity);
         }
-        else{
+        else if(roll == 10){
             Instantiate(chest, this.transform.position, Quaternion.identity);
         }
     }

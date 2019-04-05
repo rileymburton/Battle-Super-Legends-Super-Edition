@@ -211,7 +211,7 @@ MonoBehaviour:
   roomI: {fileID: 8833207152023145834, guid: d0076a8b13174234da32fbc168a85eba, type: 3}
   roomI1: {fileID: 5495069896386888998, guid: 8e3f61dd2c3eb9c4bb16b4b58a40c9cc, type: 3}
   roomI2: {fileID: 3587537255495523456, guid: 9c76d900872be1145a6cd4f3f66ef048, type: 3}
-  roomJ: {fileID: 3559096820077397353, guid: a9f0953360eedc84eac995be576afaeb, type: 3}
+  roomJ: {fileID: 511318557004822191, guid: a9f0953360eedc84eac995be576afaeb, type: 3}
   roomJ1: {fileID: 5285642405448985170, guid: f72304d6fe15bfb42889f5a8a3182202, type: 3}
   roomJ2: {fileID: 2426822608883374161, guid: df2feac2a8179c840860cf3295460801, type: 3}
   roomXLeft: {fileID: 1098985903532000, guid: c46b4a3902ae10f4f9c7c4d9a46d6eb6, type: 3}
@@ -346,6 +346,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8177429054023761892, guid: d08b121428517644f91f3813e4a98679,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1837368265}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08b121428517644f91f3813e4a98679, type: 3}
 --- !u!1 &1837368265 stripped

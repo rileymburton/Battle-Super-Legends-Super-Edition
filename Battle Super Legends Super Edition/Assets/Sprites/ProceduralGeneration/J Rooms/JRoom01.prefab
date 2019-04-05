@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8024393064736605270}
   - component: {fileID: 8245219367860634808}
   - component: {fileID: 6041347214869586281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JRoom01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6073422264844193139, guid: f14e89a8bccac9b4fa5be53286be3e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7938278477952920308, guid: f14e89a8bccac9b4fa5be53286be3e69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,6 +269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073422264844193139, guid: f14e89a8bccac9b4fa5be53286be3e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7938278477952920308, guid: f14e89a8bccac9b4fa5be53286be3e69,
         type: 3}
@@ -340,6 +350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6073422264844193139, guid: f14e89a8bccac9b4fa5be53286be3e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7938278477952920308, guid: f14e89a8bccac9b4fa5be53286be3e69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -415,6 +430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6073422264844193139, guid: f14e89a8bccac9b4fa5be53286be3e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7938278477952920308, guid: f14e89a8bccac9b4fa5be53286be3e69,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,6 +509,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073422264844193139, guid: f14e89a8bccac9b4fa5be53286be3e69,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7938278477952920308, guid: f14e89a8bccac9b4fa5be53286be3e69,
         type: 3}

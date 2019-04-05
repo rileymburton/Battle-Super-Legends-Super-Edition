@@ -38,7 +38,7 @@ public class HealthDisplay : MonoBehaviour
     {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>("item");
-        Cm = Player.GetComponent<CombinedMove>();
+//        Cm = Player.GetComponent<CombinedMove>();
 
         healthBar.maxValue = Cm.maxHealth;
         coin    = 300;
