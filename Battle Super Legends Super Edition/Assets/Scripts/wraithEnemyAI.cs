@@ -30,7 +30,6 @@ public class wraithEnemyAI : MonoBehaviour
     private int currentWaypoint = 0;
 
     private bool searchingForPlayer = false;
-    [SerializeField] private bool isRoaming;
 
     void Start() {
         seeker = GetComponent<Seeker>();
@@ -55,18 +54,19 @@ public class wraithEnemyAI : MonoBehaviour
     }
     IEnumerator searchForPlayer(){
         GameObject sResult = GameObject.FindGameObjectWithTag ("Player");
-        if (sResult == null){
-            yield return new WaitForSeconds (0.5f);
-            StartCoroutine(searchForPlayer());
-        } else {
-            target = sResult.transform;
-            searchingForPlayer = false;
-            StartCoroutine (UpdatePath());
+        if(distanceToPlayer < 15f){
+            if (sResult == null){
+                yield return new WaitForSeconds (0.5f);
+                StartCoroutine(searchForPlayer());
+            } else {
+                target = sResult.transform;
+                searchingForPlayer = false;
+                StartCoroutine (UpdatePath());
 
-            yield return false;
-        }
-    } 
-
+                yield return false;
+            }
+        } 
+    }
     float updatePlayerDistance(){
         distanceToPlayer =  Vector3.Distance(target.position, this.transform.position);
         return distanceToPlayer;
@@ -94,19 +94,9 @@ public class wraithEnemyAI : MonoBehaviour
         }
     }
     
-    IEnumerator makeEnemyRoam() {
-                isRoaming = true;
-                rb.AddForce(Vector3.left *20);
-                yield return new WaitForSeconds(.5f);
-                rb.AddForce(Vector3.right *20);
-                isRoaming = false;
-    }
     void FixedUpdate () {
-         distanceToPlayer = updatePlayerDistance();
-            //Roaming
-            if(distanceToPlayer >=15f && distanceToPlayer <= 30f && isRoaming == false){
-                StartCoroutine(makeEnemyRoam());
-            }
+        Debug.Log("UM BITCH WTF");
+        distanceToPlayer = updatePlayerDistance();
             if(target == null){
                 if(!searchingForPlayer){
                     searchingForPlayer = true;
@@ -115,6 +105,7 @@ public class wraithEnemyAI : MonoBehaviour
 
                 return;
             }
+        
         //TODO always look at player
 
         if(path == null){
