@@ -25,10 +25,6 @@ ExportedObj/
 *.opendb
 *.txt
 
-# Unity3D generated meta files
-*.pidb.meta
-*.pdb.meta
-
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
@@ -36,7 +32,3 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Battle Super Legends Super Edition/ProjectSettings/ProjectVersion.txt
-
-Battle Super Legends Super Edition/Assets/Sprites/CharSprites/Warlock\.meta
-
-Battle Super Legends Super Edition/Assets/Sprites/CharSprites/Necromancer\.meta
