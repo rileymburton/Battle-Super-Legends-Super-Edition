@@ -10,14 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40;
     bool jump = false;
     bool crouch = false;
-    public Vector2 prevYPos;
+    Vector2 prevYPos;
 
     // Update is called once per frame
     void Update()
     {
         animator.SetFloat("VSpeed", (transform.position.y - prevYPos.y) / Time.fixedDeltaTime);
-		Debug.Log((transform.position.y - prevYPos.y) / Time.fixedDeltaTime);
-        prevYPos = transform.position;
+		prevYPos = transform.position;
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -26,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
             animator.SetBool("IsJumping", true);
+        }
+        if (Input.GetButtonDown("Attack"))
+        {
+            attack();
         }
     }
 
@@ -38,5 +41,10 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+    }
+    
+    void attack()
+    {
+
     }
 }
