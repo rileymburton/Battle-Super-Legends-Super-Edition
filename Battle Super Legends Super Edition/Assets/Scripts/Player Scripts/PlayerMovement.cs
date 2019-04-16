@@ -10,10 +10,15 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 40;
     bool jump = false;
     bool crouch = false;
+    public Vector2 prevYPos;
 
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("VSpeed", (transform.position.y - prevYPos.y) / Time.fixedDeltaTime);
+		Debug.Log((transform.position.y - prevYPos.y) / Time.fixedDeltaTime);
+        prevYPos = transform.position;
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
@@ -22,23 +27,11 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             animator.SetBool("IsJumping", true);
         }
-        if (Input.GetButtonDown("Crouch"))
-        {
-            crouch = true;
-        } else if (Input.GetButtonUp("Crouch"))
-        {
-            crouch = false;
-        }
     }
 
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
-    }
-
-    public void OnCrouching(bool isCrouching)
-    {
-        animator.SetBool("IsCrouching", isCrouching);
     }
 
     void FixedUpdate()
