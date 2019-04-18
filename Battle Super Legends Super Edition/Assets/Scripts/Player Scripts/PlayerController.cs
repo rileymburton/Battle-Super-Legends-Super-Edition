@@ -59,6 +59,13 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter(Collision2D col)
+	{
+		if (col.gameObject.tag == "Obstacle")
+		{
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
+		}
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
