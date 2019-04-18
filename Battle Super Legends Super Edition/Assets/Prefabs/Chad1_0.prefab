@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1973856643997421050}
   - component: {fileID: 1760203335610007239}
   - component: {fileID: 967211480670347738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chad1_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   version: 2
   radius: 0.06
   height: 0.01
-  repathRate: 0.33
+  repathRate: 0.25
   canSearch: 1
   canMove: 1
   maxSpeed: 2
@@ -181,7 +181,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.5
-  pickNextWaypointDist: 0.18
+  pickNextWaypointDist: 0.15
   endReachedDistance: 0.3
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1

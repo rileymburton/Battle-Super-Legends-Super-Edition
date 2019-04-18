@@ -227,11 +227,11 @@ MonoBehaviour:
   roomXTop: {fileID: 1181432927292676, guid: 29f2fa7e8075a254ba92acaf61997ddb, type: 3}
   roomXTop1: {fileID: 0}
   roomXTop2: {fileID: 0}
-  roomLeftExitY: {fileID: 1098985903532000, guid: c46b4a3902ae10f4f9c7c4d9a46d6eb6,
+  roomLeftExitY: {fileID: 9032517803964006980, guid: b4dda3aafe8da0e4fb26251514d92c68,
     type: 3}
   roomRightExitZ: {fileID: 1637385734931376, guid: 403633552e78e734d8bc4d92e5f128c5,
     type: 3}
-  roomBottomExitYZ: {fileID: 1689445815194440, guid: 5ac7b38bcbfe29b46b0fdfbc80126951,
+  roomBottomExitYZ: {fileID: 1989861721248107306, guid: 0294ca74f788e594799ab6ac78a2728e,
     type: 3}
   roomTopExitYZ: {fileID: 1181432927292676, guid: 29f2fa7e8075a254ba92acaf61997ddb,
     type: 3}
@@ -260,6 +260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player mk.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296550739719017213, guid: 4062b0ba7ad94344f92e266f7e7d2ecc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8296550739719017203, guid: 4062b0ba7ad94344f92e266f7e7d2ecc,
         type: 3}
