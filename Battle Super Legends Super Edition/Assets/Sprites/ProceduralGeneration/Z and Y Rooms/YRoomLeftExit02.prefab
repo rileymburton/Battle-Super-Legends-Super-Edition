@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6974762811694387188}
   - component: {fileID: 8490856865807565065}
   - component: {fileID: 5651284656382918353}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YRoomLeftExit02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

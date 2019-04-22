@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8974562074025430251}
   - component: {fileID: 5850867181701649990}
   - component: {fileID: 8823457606415056286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: YRoomTopExit01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5671565838482101120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2486143, y: -2.1738343, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9057934732714594707}
