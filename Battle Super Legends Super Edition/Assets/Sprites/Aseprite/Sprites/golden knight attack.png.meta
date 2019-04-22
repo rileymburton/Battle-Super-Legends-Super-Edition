@@ -30,6 +30,20 @@ TextureImporter:
     21300050: golden knight attack 25
     21300052: golden knight attack 26
     21300054: golden knight attack 27
+    21300056: golden knight attack 28
+    21300058: golden knight attack 29
+    21300060: golden knight attack 30
+    21300062: golden knight attack 31
+    21300064: golden knight attack 32
+    21300066: golden knight attack 33
+    21300068: golden knight attack 34
+    21300070: golden knight attack 35
+    21300072: golden knight attack 36
+    21300074: golden knight attack 37
+    21300076: golden knight attack 38
+    21300078: golden knight attack 39
+    21300080: golden knight attack 40
+    21300082: golden knight attack 41
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,7 +102,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -115,7 +129,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a681e65b30c3ca14aacd8ed1462f05ed
+      spriteID: d72f83f1c1400eb429b9e3a4a219356b
       vertices: []
       indices: 
       edges: []
@@ -135,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 511755bfee2deb94a8df96e49935ee8f
+      spriteID: 6c9c1bbe0c0f9da42a1acdfae3b42d7a
       vertices: []
       indices: 
       edges: []
@@ -155,7 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1717a329bb528284299517108b12ee97
+      spriteID: 3f39bca074f100640a176db4e8c5d363
       vertices: []
       indices: 
       edges: []
@@ -175,7 +189,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de44275412b5e6e4c8af0a4d1cab785f
+      spriteID: 58f4d3b383f55cd4c9599b59f0fc4742
       vertices: []
       indices: 
       edges: []
@@ -195,7 +209,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ee728e4db5be8944892e77faf02774c
+      spriteID: 827be8b2b8c732f4996eb4b360577b27
       vertices: []
       indices: 
       edges: []
@@ -204,8 +218,8 @@ TextureImporter:
       name: golden knight attack 5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 240
+        y: 224
         width: 48
         height: 32
       alignment: 7
@@ -215,7 +229,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59e69f0e023efe94297d177e4b75b0be
+      spriteID: d5ad8738b8859c74fa3795464cee1152
       vertices: []
       indices: 
       edges: []
@@ -224,8 +238,8 @@ TextureImporter:
       name: golden knight attack 6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
+        x: 288
+        y: 224
         width: 48
         height: 32
       alignment: 7
@@ -235,7 +249,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df0e6d2592bc46340aa11a8f553fb91a
+      spriteID: 29c547cad18d14c4f9c00df7a59d775f
       vertices: []
       indices: 
       edges: []
@@ -244,8 +258,8 @@ TextureImporter:
       name: golden knight attack 7
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 336
+        y: 224
         width: 48
         height: 32
       alignment: 7
@@ -255,7 +269,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec5df8dbb1d2d0e40a318cead959c0b4
+      spriteID: efb19f39502d64045b88097308d71bb0
       vertices: []
       indices: 
       edges: []
@@ -264,8 +278,8 @@ TextureImporter:
       name: golden knight attack 8
       rect:
         serializedVersion: 2
-        x: 144
-        y: 192
+        x: 384
+        y: 224
         width: 48
         height: 32
       alignment: 7
@@ -275,7 +289,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df0af18f99803964ab97e6785f81e60e
+      spriteID: 4c98c781358b1244bb07bb6ecedf5562
       vertices: []
       indices: 
       edges: []
@@ -284,8 +298,8 @@ TextureImporter:
       name: golden knight attack 9
       rect:
         serializedVersion: 2
-        x: 192
-        y: 192
+        x: 432
+        y: 224
         width: 48
         height: 32
       alignment: 7
@@ -295,7 +309,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6786b132cfefd3347809e76957f91231
+      spriteID: 4a3e399f686d93a41889ce1203aac15a
       vertices: []
       indices: 
       edges: []
@@ -305,7 +319,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 192
         width: 48
         height: 32
       alignment: 7
@@ -315,7 +329,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8071bf50b881b8c48869f64ff0f2111c
+      spriteID: a99ca97a14a44844aaf3d40be295d8b2
       vertices: []
       indices: 
       edges: []
@@ -325,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 160
+        y: 192
         width: 48
         height: 32
       alignment: 7
@@ -335,7 +349,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07e7d181ffa61b24cb3ff2e397898368
+      spriteID: 652b6677dba23804fb02f97fac4dcbab
       vertices: []
       indices: 
       edges: []
@@ -345,7 +359,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 192
         width: 48
         height: 32
       alignment: 7
@@ -355,7 +369,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99364e1b2fbcf2a4da845030955e33a7
+      spriteID: 83a1ef0a1379af74ea829628a5460083
       vertices: []
       indices: 
       edges: []
@@ -365,7 +379,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 160
+        y: 192
         width: 48
         height: 32
       alignment: 7
@@ -375,7 +389,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37f1d1c85f3cb6e48aaf2829d2683d52
+      spriteID: 379c732d7175e844399eaaabba5f0966
       vertices: []
       indices: 
       edges: []
@@ -385,6 +399,126 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbdcb6bf951cbfb448abe3e593adf91a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef68bc9053250a4da4d248db014a26c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9858392c067204da30296e2e41fd25
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b81195edcaf7a145a398fe9dc26f30c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ef5fdf9b92daf4fbbc5a7ee0c34fa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b268e7117447a694380256cbcbb4b9c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 20
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 160
         width: 48
         height: 32
@@ -395,127 +529,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2dd05c85e02879643b465949d27e099a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ce614b2dbaccd04cb4fad40b95711cc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 16
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3528c83791a1f104faaeefb91135f2e6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 17
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6cd0a4964fd637b43ad4f18ab30c6eed
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 18
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 128
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5ed2a3076e192f478f9f244d23b92e4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 19
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4581bee66c6a09745b199f95d3b7d306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2393b156e0f806e4886eec7b21400b94
+      spriteID: d18976a9627f35f46a91ad1ea69bea71
       vertices: []
       indices: 
       edges: []
@@ -525,7 +539,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 96
+        y: 160
         width: 48
         height: 32
       alignment: 7
@@ -535,7 +549,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8053f7ffec8b1f4eba657c74cd48b81
+      spriteID: cd28f8f3b374b034d99ea304f024f581
       vertices: []
       indices: 
       edges: []
@@ -545,7 +559,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 160
         width: 48
         height: 32
       alignment: 7
@@ -555,7 +569,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5072365a3dd51d94c8041cfdb54c6a2f
+      spriteID: 8d81cb29d9c01cc4c906598642dccf0b
       vertices: []
       indices: 
       edges: []
@@ -565,7 +579,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 96
+        y: 160
         width: 48
         height: 32
       alignment: 7
@@ -575,7 +589,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcb480715b68b23488e737462a248b26
+      spriteID: 73f7f658c02a76845880e37a3e9ab35e
       vertices: []
       indices: 
       edges: []
@@ -585,6 +599,326 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ca66bb31585ff4f973ea8fc274f6c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 532d01a35f0298641ae44e5800c3ad41
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c478e64b2340f488f952fd3a6a00e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3edfbeba0a3dbb0498e4d0aef019f890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b90f2a8569902146a29151e19fcb41b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 160
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dce1737cac99d4fa58c10b65744ae6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9f6d970e1458b4386896222c082416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9601c91e570a24db1a7f3415434f1b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec881fda4c94b045ba8fa9dd91c7573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7b6d6fe901797418464fec0ce66d9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344500e99028e094ca98dcb088e1e264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766ba634d3e32c5489a35a80cc7c98af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d6d15efc3b866448aab875e9132b70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d833fdc0c5d63e4d8c22f3b30991855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cbccba2fc4ecd48aa9dd2cf58b15ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 39
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 128
+        width: 48
+        height: 32
+      alignment: 7
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a7e42a1df45d14995f3aedb457ec03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden knight attack 40
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 96
         width: 48
         height: 32
@@ -595,37 +929,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9f2057072d70d74cbb4b25f388fcb7c
+      spriteID: be4f1ae6cd764e448ad2a74ece3d50ad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golden knight attack 25
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb6aeaa017c4d684fbaf2b3edfece086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 26
+      name: golden knight attack 41
       rect:
         serializedVersion: 2
         x: 48
-        y: 64
+        y: 96
         width: 48
         height: 32
       alignment: 7
@@ -635,27 +949,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a2f6abc8c4250c4f8cdede4185ad302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golden knight attack 27
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 48
-        height: 32
-      alignment: 7
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ee5140c082b582489317d30f902df58
+      spriteID: 14bc43b5d41a6a74a84e710679753165
       vertices: []
       indices: 
       edges: []
