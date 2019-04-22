@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8974562074025430251}
   - component: {fileID: 5850867181701649990}
+  - component: {fileID: 8823457606415056286}
   m_Layer: 0
   m_Name: YRoomTopExit01
   m_TagString: Untagged
@@ -79,3 +80,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &8823457606415056286
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671565838482101120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 25.6, y: 25.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.4902344, y: 5}
+      - {x: 2.4902344, y: 4.375}
+      - {x: 2.5, y: 4.3652344}
+      - {x: 4.375488, y: 4.371167}
+      - {x: 4.3740807, y: 0.6251726}
+      - {x: 3.1259384, y: 0.62372315}
+      - {x: 3.1245542, y: 0.00034618378}
+      - {x: 4.374927, y: -0.0002143383}
+      - {x: 4.37496, y: -3.1249971}
+      - {x: 3.7507348, y: -3.126748}
+      - {x: 3.753646, y: -3.749063}
+      - {x: 3.1103516, y: -3.725586}
+      - {x: 0.625, y: -3.1152344}
+      - {x: -0.625, y: -3.1152344}
+      - {x: -3.100586, y: -2.2509766}
+      - {x: -1.5429688, y: 5}
+      - {x: -5, y: 5}
+      - {x: -5, y: -5}
+      - {x: 5, y: -5}
+      - {x: 5, y: 5}
+    - - {x: -2.5097656, y: -1.875}
+      - {x: -2.5048828, y: -1.8847656}
+      - {x: 2.5097656, y: -1.8847656}
+      - {x: 2.5097656, y: -1.2402344}
+      - {x: -2.5, y: -1.2402344}
+      - {x: -2.5097656, y: -1.25}
+    - - {x: 2.5097656, y: 3.022461}
+      - {x: 2.2021484, y: 3.7597656}
+      - {x: -1.2744141, y: 3.7597656}
+      - {x: -2.5097656, y: 3.256836}
+      - {x: -2.5097656, y: 1.8652344}
+      - {x: 2.5, y: 1.8652344}
+      - {x: 2.5097656, y: 1.875}
