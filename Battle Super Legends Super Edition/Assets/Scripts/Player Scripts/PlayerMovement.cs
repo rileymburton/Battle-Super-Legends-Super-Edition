@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerController controller;
+    public CombatManager combat;
     public Animator animator;
     float horizontalMove = 0;
     public float runSpeed = 40;
@@ -28,7 +29,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButtonDown("Attack"))
         {
-            attack();
+            combat.attack();
+        }
+        if (Input.GetButtonDown("Roll"))
+        {
+            combat.roll();
         }
     }
 
@@ -41,10 +46,5 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-    }
-    
-    void attack()
-    {
-
     }
 }
