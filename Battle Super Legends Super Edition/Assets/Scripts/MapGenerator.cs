@@ -86,6 +86,9 @@ public class MapGenerator : MonoBehaviour {
 		PlaceRandomRooms();
 		InstantiateRooms();
 		AstarPath.active.Scan();
+		Debug.LogError(xPosition[xPosition.Count-1]);
+		Debug.LogError(yPosition[yPosition.Count-1]);
+		
 	}
 	
 	private void GenerateMap(){
