@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+	private bool doubleJump = true;
+
 	[Header("Events")]
 	[Space]
 
@@ -127,6 +129,16 @@ public class PlayerController : MonoBehaviour {
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
+			doubleJump = true;
+			m_Rigidbody2D.velocity = Vector2.zero;
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+		}
+		// If the player should jump...
+		else if (!m_Grounded && jump && doubleJump)
+		{
+			// Add a vertical force to the player.
+			m_Grounded = false;
+			doubleJump = false;
 			m_Rigidbody2D.velocity = Vector2.zero;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
