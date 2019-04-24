@@ -94,10 +94,12 @@ GameObject:
   - component: {fileID: 8296550739719017202}
   - component: {fileID: 8296550739719017207}
   - component: {fileID: 8296550739719017204}
+  - component: {fileID: 1111066310276469619}
+  - component: {fileID: 6954041353963327258}
   - component: {fileID: 8296550739719017206}
   - component: {fileID: 8296550739719017201}
   - component: {fileID: 8296550739719017200}
-  - component: {fileID: 8296550739719017205}
+  - component: {fileID: 6998257897263606956}
   m_Layer: 0
   m_Name: Player mk.2
   m_TagString: Player
@@ -183,7 +185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8296550739719017204}
-  animator: {fileID: 8296550739719017205}
+  combat: {fileID: 1111066310276469619}
+  animator: {fileID: 6998257897263606956}
+  horizontalMove: 0
   runSpeed: 40
 --- !u!114 &8296550739719017204
 MonoBehaviour:
@@ -207,6 +211,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 8296550739815283058}
   m_CeilingCheck: {fileID: 8296550740003938470}
   m_CrouchDisableCollider: {fileID: 8296550739719017201}
+  m_Rigidbody2D: {fileID: 8296550739719017206}
+  m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -239,6 +245,49 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: PlayerController+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &1111066310276469619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296550739719017213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34e16a0cb35f02c408cd8ef941f3e928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 6954041353963327258}
+  headHitbox: {fileID: 8296550739719017201}
+  controller: {fileID: 8296550739719017204}
+  movement: {fileID: 8296550739719017207}
+  animator: {fileID: 6998257897263606956}
+--- !u!61 &6954041353963327258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296550739719017213}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!50 &8296550739719017206
 Rigidbody2D:
   serializedVersion: 4
@@ -302,7 +351,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.125}
   serializedVersion: 2
   m_Radius: 0.125
---- !u!95 &8296550739719017205
+--- !u!95 &6998257897263606956
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -312,7 +361,7 @@ Animator:
   m_GameObject: {fileID: 8296550739719017213}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a7880a28d33ca7447812732f80ccf089, type: 2}
+  m_Controller: {fileID: 9100000, guid: 790107be19c531745ada4a3e49a5571f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
