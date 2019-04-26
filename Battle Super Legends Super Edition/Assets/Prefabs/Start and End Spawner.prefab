@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2bc5440adf6924387873a2e2161af1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teleporter: {fileID: 4399398640237201460, guid: d6dbfd54cdce6354a8515dc9a0b12a8b,
+    type: 3}
+  shop: {fileID: 0}
