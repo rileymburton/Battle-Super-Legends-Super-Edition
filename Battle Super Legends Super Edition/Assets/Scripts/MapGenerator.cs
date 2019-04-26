@@ -12,6 +12,7 @@ public class MapGenerator : MonoBehaviour {
 
 	public int xMax;
 	public int yMax;
+	public bool updatedValues;
 	public GameObject roomA;
 	public GameObject roomA1;
 	public GameObject roomA2;
@@ -89,8 +90,10 @@ public class MapGenerator : MonoBehaviour {
 		PlaceRandomRooms();
 		InstantiateRooms();
 		AstarPath.active.Scan();
-		
-		
+		xMax = xPosition[yPosition.Count-1];
+		yMax = yPosition[yPosition.Count-1];
+		updatedValues = true;
+		Debug.LogError(xMax + " " + yMax + " " + updatedValues);
 		
 	}
 	
@@ -679,15 +682,13 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
-		public int returnXMax(int value){
-			xMax = xPosition[xPosition.Count-1];
+		public int returnXMax(){
 			Debug.LogError(xMax + " XMax");
-			return value;
+			return xMax;
 		}
-		public int returnYMax(int value){
-			yMax = yPosition[yPosition.Count-1];
-			Debug.LogError(yMax + " YMax");
-			return value;
+		public int returnYMax(){
+			Debug.LogError(yMax+ " YMax");
+			return yMax;
 		}
 }
 	

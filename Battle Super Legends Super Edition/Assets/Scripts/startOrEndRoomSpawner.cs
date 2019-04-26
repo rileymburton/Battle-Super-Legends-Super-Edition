@@ -7,15 +7,20 @@ public class startOrEndRoomSpawner : MonoBehaviour
     GameObject room;
     public GameObject teleporter;
     public GameObject shop;
+    int finalY;
+    int finalX;
 
 
     MapGenerator mg = new MapGenerator();
     // Start is called before the first frame update
     void Start()
     {
-        System.Threading.Thread.Sleep(3000);
-        int finalX = mg.returnXMax(mg.xMax);
-        int finalY = mg.returnYMax(mg.yMax);
+        while(mg.updatedValues == false){
+            System.Threading.Thread.Sleep(500);
+        }
+
+        finalX = mg.returnXMax();
+        finalY = mg.returnYMax();
 
         Debug.LogError(finalX + " " + finalY);
         room = this.gameObject.transform.parent.gameObject;
