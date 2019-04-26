@@ -10,7 +10,7 @@ public class CombatManager : MonoBehaviour
     public PlayerMovement movement;
     public Animator animator;
 
-    float rollSpeed = 5;
+    float rollSpeed = 10;
     int rollDuration = 40;
 
     float hitboxXSize = .25f;
@@ -56,7 +56,7 @@ public class CombatManager : MonoBehaviour
     public void roll()
     {
         hitbox.enabled = false;
-        
+
         if (controller.m_FacingRight)
         {
             rollSpeed = Mathf.Abs(rollSpeed);

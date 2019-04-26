@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetFloat("VSpeed", (transform.position.y - prevYPos.y) / Time.fixedDeltaTime);
 		prevYPos = transform.position;
+        animator.SetBool("Grounded", controller.m_Grounded);
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
