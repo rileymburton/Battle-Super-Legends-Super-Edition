@@ -7,8 +7,11 @@ public class MapGenerator : MonoBehaviour {
 	private List <int> spawnDirections = new List<int>();
 	private List <string> roomExitType = new List<string>();	
 
-	private List <int> xPosition = new List<int>();
-	private List <int> yPosition = new List<int>();
+	public List <int> xPosition = new List<int>();
+	public List <int> yPosition = new List<int>();
+
+	public int xMax;
+	public int yMax;
 	public GameObject roomA;
 	public GameObject roomA1;
 	public GameObject roomA2;
@@ -86,8 +89,8 @@ public class MapGenerator : MonoBehaviour {
 		PlaceRandomRooms();
 		InstantiateRooms();
 		AstarPath.active.Scan();
-		Debug.LogError(xPosition[xPosition.Count-1]);
-		Debug.LogError(yPosition[yPosition.Count-1]);
+		
+		
 		
 	}
 	
@@ -675,6 +678,16 @@ public class MapGenerator : MonoBehaviour {
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 			}
+		}
+		public int returnXMax(int value){
+			xMax = xPosition[xPosition.Count-1];
+			Debug.LogError(xMax + " XMax");
+			return value;
+		}
+		public int returnYMax(int value){
+			yMax = yPosition[yPosition.Count-1];
+			Debug.LogError(yMax + " YMax");
+			return value;
 		}
 }
 	

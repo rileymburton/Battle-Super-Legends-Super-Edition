@@ -184,6 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035f2ac9a0b707744b94dd677bea00df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xPosition: 
+  yPosition: 
+  xMax: 0
+  yMax: 0
   roomA: {fileID: 2584710564266537046, guid: 581d059b6c78d2d44a8f1aa1da4a5f8d, type: 3}
   roomA1: {fileID: 9070908215437234260, guid: 744d896abc86fd84eb824cea5716dc3d, type: 3}
   roomA2: {fileID: 2118776652855946517, guid: cf48ec4e5bd02584f8dd22fa81405bfc, type: 3}
