@@ -92,9 +92,6 @@ public class MapGenerator : MonoBehaviour {
 		AstarPath.active.Scan();
 		xMax = xPosition[yPosition.Count-1];
 		yMax = yPosition[yPosition.Count-1];
-		updatedValues = true;
-		Debug.LogError(xMax + " " + yMax + " " + updatedValues);
-		
 	}
 	
 	private void GenerateMap(){
@@ -681,14 +678,6 @@ public class MapGenerator : MonoBehaviour {
 					Instantiate(roomBottomExitYZ, new Vector2(xPosition[i], yPosition[i]), Quaternion.identity);
 				}
 			}
-		}
-		public int returnXMax(){
-			Debug.LogError(xMax + " XMax");
-			return xMax;
-		}
-		public int returnYMax(){
-			Debug.LogError(yMax+ " YMax");
-			return yMax;
 		}
 }
 	

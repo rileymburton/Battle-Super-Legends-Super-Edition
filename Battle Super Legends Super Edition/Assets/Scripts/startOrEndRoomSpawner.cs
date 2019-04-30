@@ -6,23 +6,21 @@ public class startOrEndRoomSpawner : MonoBehaviour
 {
     GameObject room;
     public GameObject teleporter;
+
+    private GameObject mapGenObj;
     public GameObject shop;
     int finalY;
     int finalX;
 
 
-    MapGenerator mg = new MapGenerator();
     // Start is called before the first frame update
     void Start()
     {
-        while(mg.updatedValues == false){
-            System.Threading.Thread.Sleep(500);
-        }
-
-        finalX = mg.returnXMax();
-        finalY = mg.returnYMax();
-
-        Debug.LogError(finalX + " " + finalY);
+        mapGenObj = GameObject.Find("Map Generator");
+        MapGenerator Mg = mapGenObj.GetComponent<MapGenerator>();
+        finalX = Mg.xMax;
+        finalY = Mg.yMax;
+        
         room = this.gameObject.transform.parent.gameObject;
         if (room.transform.position.x == 0 && room.transform.position.y == 0){
             Instantiate(teleporter,this.transform.position,Quaternion.identity);

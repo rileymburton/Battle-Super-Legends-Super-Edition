@@ -17,4 +17,7 @@ public class GameMaster : MonoBehaviour
     public static void KillEnemy(Enemy enemy) {
         Destroy (enemy.gameObject);
     }
+    public void NewGame () {
+
+    }
 }
