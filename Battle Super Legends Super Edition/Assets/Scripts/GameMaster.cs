@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
+    public GameObject mapGenerator;
+    MapGenerator mg;
     void Start () {
         StartCoroutine(onStartUp());
+        mapGenerator = GameObject.Find("Map Generator");
+        mg = mapGenerator.GetComponent<MapGenerator>();
     }
     IEnumerator onStartUp () {
         yield return new WaitForSeconds(1);
@@ -18,6 +23,6 @@ public class GameMaster : MonoBehaviour
         Destroy (enemy.gameObject);
     }
     public void NewGame () {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
